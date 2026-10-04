@@ -632,13 +632,14 @@ button {
 
 .installments-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+  width: 100%;
 }
 
 .installment-btn {
   position: relative;
-  padding: 14px 6px 12px;
+  padding: 12px 4px 10px;
   border-radius: var(--radius-md);
   background: rgba(255, 255, 255, 0.04);
   border: 1px solid var(--border-subtle);
@@ -649,6 +650,8 @@ button {
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  min-width: 0;
+  box-sizing: border-box;
 }
 
 .installment-btn .inst-count {
@@ -658,10 +661,11 @@ button {
 }
 
 .installment-btn .inst-subval {
-  font-size: 0.68rem;
+  font-size: 0.66rem;
   color: var(--text-subtle);
   margin-top: 4px;
   font-weight: 600;
+  white-space: nowrap;
   transition: color 0.15s ease;
 }
 
@@ -688,15 +692,15 @@ button {
 
 .installment-btn.active {
   background: var(--primary-gradient);
-  color: var(--text-dark);
-  font-weight: 800;
-  border-color: transparent;
-  box-shadow: var(--primary-glow);
+  color: #FFFFFF;
+  font-weight: 900;
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 6px 20px rgba(255, 90, 0, 0.55);
   transform: translateY(-2px);
 }
 
 .installment-btn.active .inst-subval {
-  color: rgba(7, 13, 24, 0.85);
+  color: #FFFFFF;
   font-weight: 800;
 }
 
@@ -816,6 +820,57 @@ button {
   .stepper-btn {
     width: 38px;
     height: 38px;
+  }
+
+  /* Atalhos Rápidos de Valores em 3 Colunas (100% visíveis, sem corte) */
+  .quick-amounts-bar {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    overflow-x: visible;
+  }
+
+  .quick-amount-pill {
+    min-width: 0;
+    width: 100%;
+    padding: 9px 4px;
+    font-size: 0.8rem;
+  }
+
+  /* Grade de Parcelas no Celular: 2 colunas com o 48x em destaque na base */
+  .installments-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .installment-btn {
+    padding: 14px 10px;
+    border-radius: var(--radius-md);
+  }
+
+  .installment-btn .inst-count {
+    font-size: 1.25rem;
+  }
+
+  .installment-btn .inst-subval {
+    font-size: 0.74rem;
+  }
+
+  /* 48x (Destaque do Criativo "Parcele em até 48x!") ocupa a linha inteira */
+  .installments-grid .installment-btn:nth-child(5) {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    gap: 14px;
+    padding: 12px 18px;
+  }
+
+  .installments-grid .installment-btn:nth-child(5) .inst-count {
+    font-size: 1.25rem;
+  }
+
+  .installments-grid .installment-btn:nth-child(5) .inst-subval {
+    margin-top: 0;
+    font-size: 0.82rem;
   }
 }
 
