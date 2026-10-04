@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Cred+ | Empréstimo Pessoal 100% Online & Seguro</title>
+  <meta name="description" content="Empréstimo pessoal com aprovação rápida, taxas justas a partir de 1,49% a.m. e liberação imediata via PIX na sua conta digital. Faça sua simulação gratuita agora." />
+  
+  <!-- Open Graph / Meta Compartilhamento -->
+  <meta property="og:title" content="Cred+ | Empréstimo Pessoal Rápido e Seguro" />
+  <meta property="og:description" content="Simulação 100% gratuita sem burocracia. Receba o dinheiro na hora via PIX." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23070d18'/><text x='16' y='23' font-size='22' font-weight='900' fill='%2300D26A' text-anchor='middle'>+</text></svg>" type="image/svg+xml" />
+
+  <!-- CSS Design System -->
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- Canvas para Confetes Comemorativos -->
+  <canvas id="confettiCanvas"></canvas>
+
+  <div class="app-wrapper">
+
+    <!-- Barra Superior de Impacto e Urgência -->
+    <div class="top-announcement-bar">
+      <div class="top-announcement-content">
+        <span class="announcement-pill">URGENTE</span>
+        <span class="announcement-text"><strong>NEGATIVADO?</strong> SAIA DAS DÍVIDAS AGORA COM O CRED+!</span>
+      </div>
+    </div>
+
+    <!-- Header Fixo Superior -->
+    <header class="app-header">
+      <div class="header-content">
+        <!-- Botão Voltar -->
+        <button id="headerBackBtn" class="header-action-btn" type="button" aria-label="Voltar para etapa anterior">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m15 18-6-6 6-6"/>
+          </svg>
+          <span>Voltar</span>
+        </button>
+
+        <!-- Logotipo Oficial Cred+ com Estrela -->
+        <a href="#" class="brand-logo-badge" onclick="location.reload(); return false;">
+          <svg class="brand-star-icon" width="20" height="20" viewBox="0 0 24 24" fill="#FFFFFF" stroke="#FFFFFF" stroke-width="1.5">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+          </svg>
+          <div class="brand-text-col">
+            <span class="brand-title-main">CRED<span class="plus-symbol">+</span></span>
+            <span class="brand-tagline-sub">SOLUÇÕES FINANCEIRAS</span>
+          </div>
+        </a>
+
+        <!-- Selo de Segurança Superior -->
+        <div class="header-security-badge">
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+            <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+          </svg>
+          <span>100% Seguro</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Barra de Progresso Superior -->
+    <div class="progress-container">
+      <div id="flowProgressBar" class="progress-bar-fill"></div>
+    </div>
+
+    <!-- Container Principal do Fluxo -->
+    <main class="app-container">
+
+      <!-- ========================================================
+           PASSO 1: SIMULAÇÃO DE EMPRÉSTIMO (CRIATIVO OFICIAL CRED+)
+           ======================================================== -->
+      <section id="step-1" class="step-view active">
+        <!-- Topo com Gancho de Conversão -->
+        <div class="step-header" style="margin-bottom: 20px;">
+          <div style="display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+            <span class="hero-hook-badge" style="margin-bottom:0;">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="#FFFFFF"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              NÓS ACREDITAMOS EM VOCÊ!
+            </span>
+            <span style="font-size:0.75rem; font-weight:900; background:#FFFFFF; color:#07162C; padding:5px 12px; border-radius:6px; border:2px solid #07162C; transform:rotate(-3deg); box-shadow:0 4px 12px rgba(0,0,0,0.35); letter-spacing:0.04em;">
+              DÍVIDAS PAGAS
+            </span>
+          </div>
+          <h1 class="hero-main-title">
+            EMPRÉSTIMO PARA <br class="mobile-break" /><span class="highlight-orange">NEGATIVADOS É AQUI!</span>
+          </h1>
+          <p class="step-subtitle" style="max-width: 480px; margin: 0 auto;">
+            Sem consulta restritiva ao SPC/Serasa. Simulação 100% gratuita com liberação imediata via PIX.
+          </p>
+        </div>
+
+        <!-- Barra de Atividade ao Vivo -->
+        <div class="live-activity-bar">
+          <span class="live-pulse-dot"></span>
+          <span><strong>1.482 pessoas</strong> solicitaram empréstimo nas últimas 2 horas. <strong>Aprovação: 97,4%</strong></span>
+        </div>
+
+        <!-- Calculadora de Empréstimo -->
+        <div class="glass-card simulation-card">
+          <!-- Valor Principal Grande com Steppers -->
+          <div class="amount-display-box">
+            <p class="amount-label">De quanto você precisa hoje?</p>
+            <div class="amount-stepper-container">
+              <button type="button" id="stepperMinusBtn" class="stepper-btn" aria-label="Diminuir valor">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </button>
+              <div class="amount-huge">
+                <span class="currency">R$</span>
+                <span id="simAmountValue">10.000,00</span>
+              </div>
+              <button type="button" id="stepperPlusBtn" class="stepper-btn" aria-label="Aumentar valor">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Atalhos Rápidos de Valores -->
+          <div class="quick-amounts-bar">
+            <button type="button" class="quick-amount-pill" data-amount="1500">R$ 1.500</button>
+            <button type="button" class="quick-amount-pill" data-amount="3000">R$ 3.000</button>
+            <button type="button" class="quick-amount-pill" data-amount="5000">R$ 5.000</button>
+            <button type="button" class="quick-amount-pill active" data-amount="10000">R$ 10.000</button>
+            <button type="button" class="quick-amount-pill" data-amount="15000">R$ 15.000</button>
+            <button type="button" class="quick-amount-pill" data-amount="20000">R$ 20.000</button>
+          </div>
+
+          <!-- Slider Customizado -->
+          <div class="slider-container">
+            <input 
+              type="range" 
+              id="loanRange" 
+              class="custom-range" 
+              min="1000" 
+              max="20000" 
+              step="500" 
+              value="10000" 
+              aria-label="Selecionar valor do empréstimo"
+            />
+            <div class="slider-limits">
+              <span>R$ 1.000</span>
+              <span>R$ 20.000</span>
+            </div>
+          </div>
+
+          <div class="card-divider"></div>
+
+          <!-- Seletor de Parcelas com opção de até 48x (Conforme Criativo) -->
+          <div class="installments-section">
+            <h3 class="section-mini-title">Em quantas parcelas você deseja pagar?</h3>
+            <div class="installments-grid" style="grid-template-columns: repeat(5, 1fr);">
+              <button type="button" class="installment-btn" data-installments="6">
+                <span class="inst-count">6x</span>
+                <span id="instSubVal6" class="inst-subval">R$ 0,00</span>
+              </button>
+              <button type="button" class="installment-btn active" data-installments="12">
+                <span class="inst-count">12x</span>
+                <span id="instSubVal12" class="inst-subval">R$ 0,00</span>
+              </button>
+              <button type="button" class="installment-btn" data-installments="24">
+                <span class="inst-count">24x</span>
+                <span id="instSubVal24" class="inst-subval">R$ 0,00</span>
+              </button>
+              <button type="button" class="installment-btn" data-installments="36">
+                <span class="inst-count">36x</span>
+                <span id="instSubVal36" class="inst-subval">R$ 0,00</span>
+              </button>
+              <button type="button" class="installment-btn" data-installments="48">
+                <span class="inst-count">48x</span>
+                <span id="instSubVal48" class="inst-subval">R$ 0,00</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Resumo do Cálculo da Parcela -->
+          <div class="calc-summary-box" style="margin-top: 18px;">
+            <div class="calc-left">
+              <p class="calc-label">Valor estimado da parcela</p>
+              <p class="calc-rate">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                </svg>
+                Juros especiais negativado: 1,49% a.m.
+              </p>
+            </div>
+            <div class="calc-right">
+              <div id="simPmtValue" class="calc-value">R$ 916,23</div>
+              <div id="simTotalValue" class="calc-total">Total: R$ 10.994,75</div>
+            </div>
+          </div>
+
+          <!-- BOTÃO DE ALTA CONVERSÃO (IDÊNTICO AO CRIATIVO: Borda Branca, Laranja Intenso, Seta e Cursor) -->
+          <button id="simContinueBtn" type="button" class="btn-primary-cta" style="margin-top: 22px;">
+            <span class="cta-arrow-icon">➔</span>
+            <div class="cta-content-wrap">
+              <span class="cta-headline">CLIQUE AQUI E FAÇA SUA SIMULAÇÃO GRÁTIS!</span>
+              <span class="cta-subdetail">Dinheiro rápido na conta via PIX</span>
+            </div>
+            <div class="cta-pointer-cursor">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                <path d="M4 3l14 8-6.5 2-3 8-4.5-18z" fill="#FFFFFF" stroke="#07162C" stroke-width="2.2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+          </button>
+        </div>
+
+        <!-- OS 3 PILARES DE CONVERSÃO DO CRIATIVO OFICIAL -->
+        <div class="hero-conversion-pillars">
+          <div class="pillar-col">
+            <div class="pillar-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <div class="pillar-title">Dinheiro Rápido</div>
+            <div class="pillar-subtitle">e Sem Burocracia!</div>
+          </div>
+
+          <div class="pillar-v-divider"></div>
+
+          <div class="pillar-col">
+            <div class="pillar-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <div class="pillar-title">100% Online</div>
+            <div class="pillar-subtitle">e Seguro</div>
+          </div>
+
+          <div class="pillar-v-divider"></div>
+
+          <div class="pillar-col">
+            <div class="pillar-icon-box">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div class="pillar-title">Parcele em</div>
+            <div class="pillar-subtitle">até 48x!</div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ========================================================
+           PASSO 2: INFORME SEU CPF
+           ======================================================== -->
+      <section id="step-2" class="step-view">
+        <div class="step-header">
+          <span class="step-eyebrow">Passo 2 de 5</span>
+          <h1 class="step-title">Informe seu CPF</h1>
+          <p class="step-subtitle">Precisamos do seu CPF para buscar seu pré-cadastro e prosseguir com a análise.</p>
+        </div>
+
+        <form id="step2Form" class="glass-card">
+          <div class="form-group">
+            <label class="form-label" for="cpfInput">
+              <span>CPF</span>
+              <span class="label-tag">Obrigatório</span>
+            </label>
+            <div class="input-with-icon">
+              <span class="input-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="18" height="14" x="3" y="5" rx="2"/>
+                  <path d="M7 15h10M7 9h2"/>
+                </svg>
+              </span>
+              <input 
+                type="tel" 
+                id="cpfInput" 
+                class="form-input has-icon" 
+                placeholder="000.000.000-00" 
+                maxlength="14" 
+                autocomplete="off"
+                required 
+              />
+            </div>
+          </div>
+
+          <div class="security-note-box">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+            <p>Consulta protegida e sem custo. Seus dados são usados exclusivamente para a análise de crédito, em total conformidade com a LGPD.</p>
+          </div>
+
+          <button id="cpfContinueBtn" type="submit" class="btn-primary-cta" disabled>
+            <span>Continuar</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </form>
+      </section>
+
+
+      <!-- ========================================================
+           PASSO 3: CONFIRME SEUS DADOS
+           ======================================================== -->
+      <section id="step-3" class="step-view">
+        <div class="step-header">
+          <span class="step-eyebrow">Passo 3 de 5</span>
+          <h1 class="step-title">Confirme seus dados</h1>
+          <p class="step-subtitle">Confira se está tudo correto antes de continuar para a análise de crédito.</p>
+        </div>
+
+        <form id="step3Form" class="glass-card">
+          <div class="form-group">
+            <label class="form-label" for="step3Name">Nome completo</label>
+            <input type="text" id="step3Name" class="form-input" placeholder="Digite seu nome completo" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="step3Birth">Nascimento</label>
+              <input type="tel" id="step3Birth" class="form-input" placeholder="DD/MM/AAAA" maxlength="10" required />
+            </div>
+
+            <div class="form-group">
+              <div class="form-label">
+                <span>CPF <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg></span>
+                <button type="button" id="step3ChangeCpf" class="label-tag" style="text-decoration:underline;">Alterar</button>
+              </div>
+              <input type="text" id="step3LockedCpf" class="form-input" placeholder="000.000.000-00" readonly />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="step3Mother">Nome da mãe</label>
+            <input type="text" id="step3Mother" class="form-input" placeholder="Nome completo da sua mãe" required />
+          </div>
+
+          <!-- Gênero -->
+          <div class="form-group">
+            <label class="form-label">Gênero</label>
+            <div class="radio-chip-group">
+              <div class="radio-chip gender-chip" data-gender="Feminino">
+                <span>Feminino</span>
+                <span class="radio-circle"></span>
+              </div>
+              <div class="radio-chip gender-chip" data-gender="Masculino">
+                <span>Masculino</span>
+                <span class="radio-circle"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="step3Phone">Celular (WhatsApp)</label>
+            <input type="tel" id="step3Phone" class="form-input" placeholder="(00) 00000-0000" maxlength="15" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="step3Email">E-mail pessoal (para envio do contrato e comprovantes)</label>
+            <input type="email" id="step3Email" class="form-input" placeholder="seu.email@exemplo.com" required />
+          </div>
+
+          <button type="submit" class="btn-primary-cta">
+            <span>Continuar</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </form>
+      </section>
+
+
+      <!-- ========================================================
+           PASSO 4: SOBRE SUA SITUAÇÃO / PERFIL
+           ======================================================== -->
+      <section id="step-4" class="step-view">
+        <div class="step-header">
+          <span class="step-eyebrow">Passo 4 de 5</span>
+          <h1 class="step-title">Sobre o seu perfil</h1>
+          <p class="step-subtitle">Conte-nos sobre seus objetivos para ajustarmos as taxas ao seu perfil.</p>
+        </div>
+
+        <form id="step4Form" style="display:flex; flex-direction:column; gap:16px;">
+          <!-- Card 1: Motivo -->
+          <div class="glass-card">
+            <h3 class="section-mini-title" style="text-align:left; margin-bottom:14px;">Qual o motivo do empréstimo?</h3>
+            <div class="options-grid-2col">
+              <button type="button" class="option-select-btn reason-btn selected" data-value="Quitar dívidas">
+                <span>Quitar dívidas</span>
+                <span class="dot-indicator"></span>
+              </button>
+              <button type="button" class="option-select-btn reason-btn" data-value="Reforma da casa">
+                <span>Reforma da casa</span>
+                <span class="dot-indicator"></span>
+              </button>
+              <button type="button" class="option-select-btn reason-btn" data-value="Capital de giro">
+                <span>Capital de giro</span>
+                <span class="dot-indicator"></span>
+              </button>
+              <button type="button" class="option-select-btn reason-btn" data-value="Despesas médicas">
+                <span>Despesas médicas</span>
+                <span class="dot-indicator"></span>
+              </button>
+              <button type="button" class="option-select-btn reason-btn" data-value="Educação">
+                <span>Educação</span>
+                <span class="dot-indicator"></span>
+              </button>
+              <button type="button" class="option-select-btn reason-btn" data-value="Outro">
+                <span>Outro</span>
+                <span class="dot-indicator"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 2: Ocupação -->
+          <div class="glass-card">
+            <h3 class="section-mini-title" style="text-align:left; margin-bottom:14px;">Qual a sua ocupação?</h3>
+            <div class="options-grid-2col">
+              <button type="button" class="option-select-btn occ-btn selected" data-value="CLT">
+                <span>CLT</span>
+                <span class="dot-indicator"></span>
+              </button>
+              <button type="button" class="option-select-btn occ-btn" data-value="Autônomo(a)">
+                <span>Autônomo(a)</span>
+                <span class="dot-indicator"></span>
+              </button>
+              <button type="button" class="option-select-btn occ-btn" data-value="Servidor(a) público">
+                <span>Servidor(a) público</span>
+                <span class="dot-indicator"></span>
+              </button>
+              <button type="button" class="option-select-btn occ-btn" data-value="Aposentado(a)">
+                <span>Aposentado(a)</span>
+                <span class="dot-indicator"></span>
+              </button>
+              <button type="button" class="option-select-btn occ-btn" data-value="Empresário(a)">
+                <span>Empresário(a)</span>
+                <span class="dot-indicator"></span>
+              </button>
+              <button type="button" class="option-select-btn occ-btn" data-value="Outro">
+                <span>Outro</span>
+                <span class="dot-indicator"></span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Card 3: Negativado -->
+          <div class="glass-card">
+            <h3 class="section-mini-title" style="text-align:left; margin-bottom:14px;">Seu nome está negativado?</h3>
+            <div class="tri-state-grid">
+              <button type="button" class="tri-state-btn neg-btn" data-value="Sim">Sim</button>
+              <button type="button" class="tri-state-btn neg-btn selected" data-value="Não">Não</button>
+              <button type="button" class="tri-state-btn neg-btn" data-value="Não sei">Não sei</button>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary-cta">
+            <span>Continuar</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </form>
+      </section>
+
+
+      <!-- ========================================================
+           PASSO 5: QUAL A SUA RENDA?
+           ======================================================== -->
+      <section id="step-5" class="step-view">
+        <div class="step-header">
+          <span class="step-eyebrow">Passo 5 de 5</span>
+          <h1 class="step-title">Qual a sua renda?</h1>
+          <p class="step-subtitle">Isso nos ajuda a ajustar as parcelas ao seu orçamento sem comprometer sua renda.</p>
+        </div>
+
+        <form id="step5Form" style="display:flex; flex-direction:column; gap:16px;">
+          <div class="glass-card">
+            <div class="form-group" style="margin-bottom:12px;">
+              <label class="form-label" for="step5Income">Quanto você recebe por mês?</label>
+              <input type="text" id="step5Income" class="form-input" placeholder="R$ 0,00" required />
+            </div>
+
+            <label style="display:flex; align-items:center; gap:8px; font-size:0.85rem; color:var(--text-muted); cursor:pointer;">
+              <input type="checkbox" id="step5NoIncome" style="accent-color:var(--primary); width:16px; height:16px;" />
+              <span>Não possuo renda no momento</span>
+            </label>
+          </div>
+
+          <div class="glass-card">
+            <div class="form-group" style="margin-bottom:0;">
+              <label class="form-label" for="step5PayDay">Que dia você recebe?</label>
+              <p style="font-size:0.75rem; color:var(--text-muted); margin-bottom:8px;">Digite o dia do salário ou benefício.</p>
+              <div style="display:flex; align-items:center; gap:10px;">
+                <input type="number" id="step5PayDay" class="form-input" placeholder="Ex: 5" min="1" max="31" style="max-width:120px;" required />
+                <span style="font-size:0.9rem; color:var(--text-muted);">do mês</span>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary-cta">
+            <span>Continuar para Análise</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </form>
+      </section>
+
+
+      <!-- ========================================================
+           PASSO 6: ANÁLISE DE CRÉDITO COM IA (ANIMADA)
+           ======================================================== -->
+      <section id="step-6" class="step-view">
+        <div class="glass-card analysis-card">
+          <!-- Medidor Circular Radar -->
+          <div class="radar-gauge-wrapper">
+            <svg class="radar-svg" viewBox="0 0 140 140">
+              <circle class="radar-circle-bg" cx="70" cy="70" r="60"/>
+              <circle id="radarCircleProgress" class="radar-circle-progress" cx="70" cy="70" r="60"/>
+            </svg>
+            <div class="radar-inner-text">
+              <span id="radarPercent" class="radar-percentage">0%</span>
+              <span class="radar-label">ANALISANDO</span>
+            </div>
+          </div>
+
+          <h2 class="step-title" style="font-size:1.6rem; margin-bottom:6px;">Analisando seu perfil</h2>
+          <p class="step-subtitle">Nossa inteligência artificial está buscando as melhores condições e taxas para você.</p>
+
+          <!-- Checklist Progressivo -->
+          <div class="analysis-checklist">
+            <div id="analysisCheck1" class="analysis-check-item active">
+              <div class="check-icon-box"><div class="spinner-mini"></div></div>
+              <span>Validando dados e identidade</span>
+            </div>
+            <div id="analysisCheck2" class="analysis-check-item">
+              <div class="check-icon-box"><div class="spinner-mini"></div></div>
+              <span>Consultando score e birôs de crédito</span>
+            </div>
+            <div id="analysisCheck3" class="analysis-check-item">
+              <div class="check-icon-box"><div class="spinner-mini"></div></div>
+              <span>Analisando capacidade de pagamento</span>
+            </div>
+            <div id="analysisCheck4" class="analysis-check-item">
+              <div class="check-icon-box"><div class="spinner-mini"></div></div>
+              <span>Preparando sua melhor oferta de crédito</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ========================================================
+           PASSO 7: CRÉDITO APROVADO COM FESTA / CONFETES
+           ======================================================== -->
+      <section id="step-7" class="step-view">
+        <div class="glass-card approved-card">
+          <!-- Ícone Animado de Sucesso -->
+          <div class="approved-badge-circle">
+            <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5"/>
+            </svg>
+          </div>
+
+          <!-- Carimbo Comemorativo DÍVIDAS PAGAS -->
+          <div style="display:flex; justify-content:center; margin: 8px 0 12px;">
+            <div class="stamp-dividas-pagas" style="position:static; transform:rotate(-5deg); box-shadow:0 8px 24px rgba(0,0,0,0.5);">
+              <span>DÍVIDAS PAGAS</span>
+            </div>
+          </div>
+
+          <p id="approvedGreeting" class="approved-greeting">🎉 Parabéns!</p>
+          <h1 class="approved-title">Crédito Aprovado com Sucesso!</h1>
+          <p class="approved-desc">Nós acreditamos em você! Seu dinheiro está reservado e pronto para ser transferido via PIX.</p>
+
+          <!-- Detalhes do Valor Liberado -->
+          <div class="approved-details-box">
+            <span class="approved-amount-label">Valor Liberado</span>
+            <div id="approvedAmountDisplay" class="approved-amount-value">R$ 10.000,00</div>
+
+            <div class="approved-grid-info">
+              <div class="approved-info-row">
+                <span class="row-label">Parcelamento</span>
+                <span id="approvedTermDisplay" class="row-val">12x de R$ 916,23</span>
+              </div>
+              <div class="approved-info-row">
+                <span class="row-label">Prazo total</span>
+                <span id="approvedDurationDisplay" class="row-val">12 meses</span>
+              </div>
+              <div class="approved-info-row">
+                <span class="row-label">Forma de liberação</span>
+                <span class="row-val" style="color:var(--primary); font-weight:800;">Imediata via PIX</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Benefícios Adicionais -->
+          <div class="approved-perks-list">
+            <div class="approved-perk">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Dinheiro disponível na sua conta digital em minutos</span>
+            </div>
+            <div class="approved-perk">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Parcelas fixas e juros congelados até o fim</span>
+            </div>
+            <div class="approved-perk">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+              <span>Sem taxas antecipadas e sem burocracia</span>
+            </div>
+          </div>
+
+          <button id="approvedContinueBtn" type="button" class="btn-primary-cta">
+            <span class="cta-arrow-icon">➔</span>
+            <div class="cta-content-wrap">
+              <span class="cta-headline">CONTINUAR PARA LIBERAÇÃO DO PIX</span>
+              <span class="cta-subdetail">Acesse sua conta digital e receba o valor</span>
+            </div>
+          </button>
+        </div>
+      </section>
+
+
+      <!-- ========================================================
+           PASSO 8: MELHOR DIA PARA PAGAR
+           ======================================================== -->
+      <section id="step-8" class="step-view">
+        <div class="step-header">
+          <span class="step-eyebrow">Quase lá</span>
+          <h1 class="step-title">Melhor dia para pagar</h1>
+          <p class="step-subtitle">Escolha o dia do mês que melhor combina com a sua data de recebimento.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="days-grid">
+            <button type="button" class="day-card-btn" data-day="5">
+              <div class="day-number">5</div>
+              <div class="day-label">Dia</div>
+            </button>
+            <button type="button" class="day-card-btn selected" data-day="10">
+              <div class="day-number">10</div>
+              <div class="day-label">Dia</div>
+            </button>
+            <button type="button" class="day-card-btn" data-day="15">
+              <div class="day-number">15</div>
+              <div class="day-label">Dia</div>
+            </button>
+            <button type="button" class="day-card-btn" data-day="20">
+              <div class="day-number">20</div>
+              <div class="day-label">Dia</div>
+            </button>
+            <button type="button" class="day-card-btn" data-day="25">
+              <div class="day-number">25</div>
+              <div class="day-label">Dia</div>
+            </button>
+            <button type="button" class="day-card-btn" data-day="30">
+              <div class="day-number">30</div>
+              <div class="day-label">Dia</div>
+            </button>
+          </div>
+
+          <button id="step8ContinueBtn" type="button" class="btn-primary-cta">
+            <span>Continuar</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+
+      <!-- ========================================================
+           PASSO 9: ENDEREÇO DE COBRANÇA (COM VIACEP)
+           ======================================================== -->
+      <section id="step-9" class="step-view">
+        <div class="step-header">
+          <span class="step-eyebrow">Quase lá</span>
+          <h1 class="step-title">Endereço de cobrança</h1>
+          <p class="step-subtitle">Para onde enviamos a documentação oficial e os comprovantes do seu contrato.</p>
+        </div>
+
+        <form id="step9Form" class="glass-card">
+          <div class="form-group">
+            <div class="form-label">
+              <span>CEP</span>
+              <span id="cepLookupStatus" class="label-tag"></span>
+            </div>
+            <input type="tel" id="step9Cep" class="form-input" placeholder="00000-000" maxlength="9" required />
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="step9Street">Rua / Logradouro</label>
+            <input type="text" id="step9Street" class="form-input" placeholder="Nome da sua rua ou avenida" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="step9Number">Número</label>
+              <input type="text" id="step9Number" class="form-input" placeholder="Ex: 123" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="step9Complement">Complemento</label>
+              <input type="text" id="step9Complement" class="form-input" placeholder="Opcional (Ex: Apto 42)" />
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-top:-8px; margin-bottom:16px;">
+            <label style="display:flex; align-items:center; gap:8px; font-size:0.82rem; color:var(--text-muted); cursor:pointer;">
+              <input type="checkbox" id="step9NoNumber" style="accent-color:var(--primary); width:15px; height:15px;" />
+              <span>Sem número</span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="step9Neighborhood">Bairro</label>
+            <input type="text" id="step9Neighborhood" class="form-input" placeholder="Ex: Centro" required />
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="step9City">Cidade</label>
+              <input type="text" id="step9City" class="form-input" placeholder="Ex: São Paulo" required />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="step9UF">UF</label>
+              <input type="text" id="step9UF" class="form-input" placeholder="UF" maxlength="2" required />
+            </div>
+          </div>
+
+          <button type="submit" class="btn-primary-cta">
+            <span>Continuar</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </form>
+      </section>
+
+
+      <!-- ========================================================
+           PASSO 10: CRIAÇÃO DA CONTA DIGITAL CRED+
+           ======================================================== -->
+      <section id="step-10" class="step-view">
+        <div class="glass-card account-opening-card">
+          <div class="shield-pulse-box">
+            <svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+
+          <h2 class="step-title">Sua conta está pronta</h2>
+          <p class="step-subtitle">Liberando seu saldo aprovado e gerando acesso seguro...</p>
+
+          <div class="loading-bar-wrapper">
+            <div id="accountLoadingBar" class="loading-bar-animated"></div>
+          </div>
+
+          <div style="display:flex; align-items:center; justify-content:center; gap:8px; font-size:0.78rem; color:var(--text-subtle);">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Ambiente seguro e criptografado com chave RSA 2048-bit</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ========================================================
+           PASSO 11: HOME BANKING / CONTA DIGITAL CRED+
+           ======================================================== -->
+      <section id="step-11" class="step-view">
+        <div class="banking-dashboard">
+          
+          <!-- Barra Superior do Usuário -->
+          <div class="banking-user-bar">
+            <div class="user-identity">
+              <div id="dashboardUserAvatar" class="user-avatar-circle">C</div>
+              <div>
+                <p class="user-welcome-label">Bem-vindo(a)</p>
+                <h3 id="dashboardUserGreeting" class="user-full-name">Cliente</h3>
+              </div>
+            </div>
+
+            <!-- Botão de Notificação com Badge -->
+            <button type="button" class="icon-round-btn" aria-label="Notificações">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+                <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"/>
+              </svg>
+              <span class="badge-dot-alert"></span>
+            </button>
+          </div>
+
+          <!-- Cartão Bancário Digital Cred+ -->
+          <div class="digital-bank-card">
+            <div class="card-mesh-bg"></div>
+
+            <div class="bank-card-header">
+              <div>
+                <p class="bank-card-title">cred+ · Conta Digital</p>
+                <p class="bank-card-agency">Ag. 0001 · Conta 90552-4</p>
+              </div>
+
+              <!-- Olho para ocultar/mostrar saldo -->
+              <button type="button" id="dashboardToggleBalance" class="icon-round-btn" aria-label="Mostrar ou ocultar saldo">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/>
+                  <circle cx="12" cy="12" r="3"/>
+                </svg>
+              </button>
+            </div>
+
+            <div class="balance-box">
+              <p class="balance-label">Saldo Disponível</p>
+              <div class="balance-number-row">
+                <h2 id="dashboardBalance" class="balance-amount">R$ 10.000,00</h2>
+              </div>
+            </div>
+          </div>
+
+          <!-- Grade de Ações Rápidas -->
+          <div class="quick-actions-grid">
+            <button type="button" id="dashboardPixTile" class="action-tile-btn highlight">
+              <div class="action-icon-circle">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17l9.2-9.2M17 17V7H7"/>
+                </svg>
+              </div>
+              <span class="action-tile-label">Sacar PIX</span>
+            </button>
+
+            <button type="button" class="action-tile-btn" onclick="alert('Opção liberada após primeiro saque.');">
+              <div class="action-icon-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 10h18M7 15h.01M11 15h2"/>
+                  <rect width="20" height="14" x="2" y="5" rx="2"/>
+                </svg>
+              </div>
+              <span class="action-tile-label">Pagar</span>
+            </button>
+
+            <button type="button" class="action-tile-btn" onclick="alert('Opção liberada após primeiro saque.');">
+              <div class="action-icon-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m17 2 4 4-4 4"/>
+                  <path d="M3 11v-1a4 4 0 0 1 4-4h14"/>
+                  <path d="m7 22-4-4 4-4"/>
+                  <path d="M21 13v1a4 4 0 0 1-4 4H3"/>
+                </svg>
+              </div>
+              <span class="action-tile-label">Transferir</span>
+            </button>
+
+            <button type="button" class="action-tile-btn" onclick="alert('Histórico de transações atualizado.');">
+              <div class="action-icon-circle">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2v4a2 2 0 0 0 2 2h4"/>
+                  <path d="M16 22H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h8l6 6v12a2 2 0 0 1-2 2z"/>
+                  <path d="M8 13h8M8 17h6"/>
+                </svg>
+              </div>
+              <span class="action-tile-label">Extrato</span>
+            </button>
+          </div>
+
+          <!-- Botão Principal Gigante de Saque PIX -->
+          <button type="button" id="dashboardWithdrawCta" class="withdraw-pix-cta">
+            <div class="cta-icon-text">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m22 2-7 20-4-9-9-4Z"/>
+                <path d="M22 2 11 13"/>
+              </svg>
+              <span>Sacar meu dinheiro via PIX</span>
+            </div>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="m9 18 6-6-6-6"/>
+            </svg>
+          </button>
+
+          <!-- Extrato de Movimentações -->
+          <div class="transactions-widget">
+            <div class="widget-header">
+              <span class="widget-title">Movimentações Recentes</span>
+              <span style="font-size:0.75rem; color:var(--text-subtle);">Atualizado hoje</span>
+            </div>
+
+            <div class="transaction-item">
+              <div class="transaction-left">
+                <div class="trans-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M17 7l-9.2 9.2M8 7v9.2h9.2"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="trans-title">Empréstimo Cred+</p>
+                  <p class="trans-date">Valor liberado · Hoje</p>
+                </div>
+              </div>
+              <span id="dashboardTransAmount" class="trans-amount">+R$ 10.000,00</span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- ========================================================
+           PASSO 12: MODAL DE SAQUE VIA PIX
+           ======================================================== -->
+      <div id="pixModal" class="modal-backdrop">
+        <div class="modal-content-card">
+          <div class="modal-header">
+            <h3 class="modal-title">Sacar via PIX</h3>
+            <button type="button" id="modalCloseBtn" class="modal-close-btn" aria-label="Fechar modal">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 6 6 18M6 6l12 12"/>
+              </svg>
+            </button>
+          </div>
+
+          <!-- Card do Valor a Sacar -->
+          <div class="pix-amount-pill">
+            <div>
+              <p style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; font-weight:700;">Valor do saque</p>
+              <p id="modalPixAmountDisplay" style="font-size:1.6rem; font-weight:900; color:var(--primary); line-height:1.1; margin-top:2px;">R$ 10.000,00</p>
+              <p style="font-size:0.72rem; color:var(--text-subtle); margin-top:2px;">Todo o seu saldo disponível</p>
+            </div>
+            <span style="font-size:0.75rem; font-weight:800; background:var(--primary); color:var(--text-dark); padding:4px 10px; border-radius:var(--radius-full);">TOTAL</span>
+          </div>
+
+          <!-- Seleção do Banco do Usuário -->
+          <div class="form-group">
+            <label class="form-label" for="modalBankSelect">Seu banco</label>
+            <select id="modalBankSelect" class="form-input" style="cursor:pointer;">
+              <option value="Nubank (Nu Pagamentos S.A.)">Nubank (Nu Pagamentos S.A.)</option>
+              <option value="Banco Itaú Unibanco S.A.">Banco Itaú Unibanco S.A.</option>
+              <option value="Banco Bradesco S.A.">Banco Bradesco S.A.</option>
+              <option value="Banco do Brasil S.A.">Banco do Brasil S.A.</option>
+              <option value="Caixa Econômica Federal">Caixa Econômica Federal</option>
+              <option value="Banco Santander Brasil S.A.">Banco Santander Brasil S.A.</option>
+              <option value="Banco Inter S.A.">Banco Inter S.A.</option>
+              <option value="Mercado Pago">Mercado Pago</option>
+              <option value="C6 Bank">C6 Bank</option>
+              <option value="PagBank (PagSeguro)">PagBank (PagSeguro)</option>
+            </select>
+            <p style="font-size:0.75rem; color:var(--text-subtle); margin-top:4px;">Selecione o banco onde você tem conta para receber o PIX.</p>
+          </div>
+
+          <!-- Tipo de Chave PIX -->
+          <div class="form-group">
+            <label class="form-label">Tipo de chave PIX</label>
+            <div class="pix-type-chips">
+              <button type="button" class="pix-chip active" data-type="CPF">CPF</button>
+              <button type="button" class="pix-chip" data-type="Telefone">Telefone</button>
+              <button type="button" class="pix-chip" data-type="E-mail">E-mail</button>
+              <button type="button" class="pix-chip" data-type="Aleatória">Aleatória</button>
+            </div>
+
+            <input type="text" id="modalPixKeyInput" class="form-input" placeholder="000.000.000-00" required />
+            <p style="font-size:0.75rem; color:var(--text-subtle); margin-top:4px;">Confira a chave antes de confirmar o saque.</p>
+          </div>
+
+          <!-- Confirmar Saque -->
+          <button type="button" id="modalConfirmWithdrawBtn" class="btn-primary-cta" style="margin-top:14px;">
+            <span>Confirmar saque</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+
+      <!-- ========================================================
+           PASSO 13: ETAPA FINAL - SEGURO PRESTAMISTA DE CRÉDITO
+           ======================================================== -->
+      <section id="step-13" class="step-view">
+        <!-- Hero Card de Liberação -->
+        <div class="hero-insurance-card">
+          <span style="display:inline-flex; align-items:center; gap:6px; font-size:0.7rem; font-weight:800; text-transform:uppercase; letter-spacing:0.12em; color:var(--primary); margin-bottom:8px;">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            Falta pouco, <span id="insUserName">CLIENTE</span>
+          </span>
+          <h1 style="font-size:1.55rem; font-weight:900; color:#FFFFFF; line-height:1.2; margin-bottom:8px;">
+            Seu empréstimo está quase liberado
+          </h1>
+          <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.45;">
+            Para liberar o PIX de <strong id="insLoanAmount" style="color:var(--primary);">R$ 10.000,00</strong> na sua conta, falta apenas contratar o seguro obrigatório de proteção do crédito.
+          </p>
+
+          <!-- Checklist de Status -->
+          <div class="insurance-steps-list">
+            <div class="ins-step-row done">
+              <span class="ins-step-icon">✓</span>
+              <span id="insStepAmountLabel">Empréstimo de R$ 10.000,00 aprovado</span>
+            </div>
+            <div class="ins-step-row done">
+              <span class="ins-step-icon">✓</span>
+              <span>Conta digital criada com sucesso</span>
+            </div>
+            <div class="ins-step-row current">
+              <span class="ins-step-icon">●</span>
+              <span>Contratar seguro obrigatório do crédito</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Seção: O que o seguro inclui -->
+        <div style="margin-top:24px;">
+          <h2 style="font-size:1.05rem; font-weight:800; color:#FFFFFF; margin-bottom:12px; display:flex; align-items:center; gap:8px;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" color="var(--primary)"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+            O que o seguro inclui
+          </h2>
+
+          <div class="insurance-perks-container">
+            <div class="ins-perk-card">
+              <div class="ins-perk-icon-circle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </div>
+              <div>
+                <p class="ins-perk-title">Proteção em caso de morte ou invalidez</p>
+                <p class="ins-perk-desc">Sua família nunca herda dívidas. Em qualquer imprevisto, o saldo é 100% quitado pela seguradora.</p>
+              </div>
+            </div>
+
+            <div class="ins-perk-card">
+              <div class="ins-perk-icon-circle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+              </div>
+              <div>
+                <p class="ins-perk-title">Liberação imediata do valor</p>
+                <p class="ins-perk-desc">Assim que o seguro é confirmado, a ordem de transferência PIX cai direto na sua conta bancária.</p>
+              </div>
+            </div>
+
+            <div class="ins-perk-card">
+              <div class="ins-perk-icon-circle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </div>
+              <div>
+                <p class="ins-perk-title">Proteção contra desemprego</p>
+                <p class="ins-perk-desc">Perdeu a renda ou o emprego? Suas parcelas mensais ficam protegidas e pagas por até 6 meses.</p>
+              </div>
+            </div>
+
+            <div class="ins-perk-card">
+              <div class="ins-perk-icon-circle">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 12 2-2m0 0 7-7 7 7M5 10v10a1 1 0 0 0 1 1h3m10-11 2 2m-2-2v10a1 1 0 0 1-1 1h-3m-6 0a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1"/></svg>
+              </div>
+              <div>
+                <p class="ins-perk-title">100% reembolsável após a quitação</p>
+                <p class="ins-perk-desc">Quitou seu empréstimo em dia? O valor integral pago pelo seguro volta 100% para o seu bolso.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Escolha sua cotação -->
+        <div style="margin-top:24px;">
+          <h2 style="font-size:1.05rem; font-weight:800; color:#FFFFFF; margin-bottom:4px;">Escolha sua cotação</h2>
+          <p style="font-size:0.78rem; color:var(--text-muted); margin-bottom:12px;">Cotações com upgrade liberam mais dinheiro na sua conta bancária.</p>
+
+          <div class="quotations-list">
+            <!-- Opção Padrão -->
+            <div id="quoteOptionStandard" class="quotation-card-option selected">
+              <div class="quote-left-info">
+                <p class="quote-tag">Você receberá no PIX</p>
+                <p id="quoteStdReceive" class="quote-amount">R$ 10.000,00</p>
+                <p id="quoteStdPmt" class="quote-installments">12x de R$ 916,23</p>
+              </div>
+              <div class="quote-right-price">
+                <p class="price-tag">Seguro único</p>
+                <p class="price-val">R$ 47,90</p>
+              </div>
+            </div>
+
+            <!-- Opção Turbo -->
+            <div id="quoteOptionTurbo" class="quotation-card-option">
+              <div class="quote-left-info">
+                <span style="font-size:0.68rem; font-weight:800; color:var(--accent-gold); text-transform:uppercase; letter-spacing:0.1em; background:rgba(245,158,11,0.15); padding:2px 6px; border-radius:4px; display:inline-block; margin-bottom:2px;">Bônus +R$ 2.000,00</span>
+                <p class="quote-tag">Você receberá no PIX</p>
+                <p id="quoteTurboReceive" class="quote-amount" style="color:var(--accent-gold);">R$ 12.000,00</p>
+                <p id="quoteTurboPmt" class="quote-installments">12x de R$ 1.099,48</p>
+              </div>
+              <div class="quote-right-price">
+                <p class="price-tag">Seguro único</p>
+                <p class="price-val" style="color:var(--accent-gold);">R$ 68,00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Depoimentos Reais / Prova Social -->
+        <div class="testimonials-box">
+          <h3 style="font-size:0.92rem; font-weight:800; color:#FFFFFF; margin-bottom:12px;">Quem contratou, aprovou</h3>
+          
+          <div class="testimonial-item">
+            <div class="testimonial-user">
+              <div class="user-meta">
+                <div class="user-avatar-initials">AP</div>
+                <div>
+                  <p style="font-size:0.82rem; font-weight:700; color:#FFFFFF;">Ana Paula M.</p>
+                  <p style="font-size:0.72rem; color:var(--text-subtle);">São Paulo, SP</p>
+                </div>
+              </div>
+              <div class="stars-row">★★★★★</div>
+            </div>
+            <p class="testimonial-text">"Fiquei com receio no começo, mas paguei o seguro pelo aplicativo do meu banco e em menos de 5 minutos o dinheiro de R$ 10.000,00 caiu certinho no meu PIX. Atendimento nota 10!"</p>
+          </div>
+        </div>
+
+        <!-- CTA para Pagamento Seguro -->
+        <button type="button" id="insContinueBtn" class="btn-primary-cta">
+          <span class="cta-arrow-icon">➔</span>
+          <div class="cta-content-wrap">
+            <span class="cta-headline">PAGAR SEGURO E LIBERAR MEU PIX</span>
+            <span class="cta-subdetail">Transferência imediata do valor aprovado</span>
+          </div>
+        </button>
+      </section>
+
+
+      <!-- ========================================================
+           PASSO 14: CHECKOUT PIX EM TEMPO REAL
+           ======================================================== -->
+      <section id="step-14" class="step-view">
+        <!-- Banner de Urgência Regressiva -->
+        <div class="urgency-banner">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+          </svg>
+          <span>OFERTA EXPIRA EM <strong id="urgencyTimerDigits" class="timer-digits">14:59</strong></span>
+        </div>
+
+        <div class="pix-checkout-box">
+          <span class="pix-badge-top">PIX GERADO COM SUCESSO</span>
+
+          <div style="margin-top:10px; margin-bottom:6px;">
+            <span id="pixGatewayStatusText" class="pix-status-pill">Pushin Pay · API Oficial Conectada</span>
+          </div>
+
+          <div id="pixEnvAlert" class="pix-env-alert" style="display:none;">
+            Modo demonstração ativo. Configure seu <strong>PUSHINPAY_TOKEN</strong> no arquivo <code>.env</code> para gerar cobranças reais.
+          </div>
+
+          <p style="font-size:0.85rem; color:var(--text-muted); margin-top:6px; margin-bottom:4px;">Pague com PIX</p>
+          <h2 id="checkoutPixTotalDisplay" style="font-size:2.8rem; font-weight:900; color:#FFFFFF; line-height:1; letter-spacing:-0.04em;">R$ 47,90</h2>
+          <p style="font-size:0.8rem; color:var(--text-muted); margin-top:6px;">
+            Libera <strong id="checkoutReleaseAmount" style="color:var(--primary);">R$ 10.000,00</strong> imediatamente na sua conta
+          </p>
+
+          <!-- QR Code Oficial SVG ou Imagem -->
+          <div class="qr-code-holder" id="qrCodeHolder">
+            <svg id="checkoutQrCodeSvg"></svg>
+          </div>
+
+          <div id="pixLiveStatus" style="font-size:0.8rem; color:var(--text-muted); margin:4px 0 10px; display:flex; align-items:center; justify-content:center; gap:6px;">
+            Aguardando pagamento...
+          </div>
+
+          <!-- Código PIX Copia e Cola -->
+          <div class="pix-copia-cola-row">
+            <span id="pixCopiaColaText" class="pix-code-text">00020126360014BR.GOV.BCB.PIX...</span>
+            <button type="button" id="btnCopyPixCode" class="btn-copy-pix">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <rect width="14" height="14" x="8" y="8" rx="2" ry="2"/>
+                <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/>
+              </svg>
+              <span>Copiar PIX</span>
+            </button>
+          </div>
+
+          <p id="copyFeedbackToast" class="copy-feedback-toast">✓ Código PIX copiado para a área de transferência!</p>
+
+          <!-- 3 Passos Simples para Pagar -->
+          <div class="pix-steps-list">
+            <div class="pix-step-item">
+              <span class="step-number-pill">1</span>
+              <span>Abra o aplicativo do seu banco onde tem dinheiro ou saldo</span>
+            </div>
+            <div class="pix-step-item">
+              <span class="step-number-pill">2</span>
+              <span>Escolha a opção <strong>PIX Copia e Cola</strong> (ou ler QR Code)</span>
+            </div>
+            <div class="pix-step-item">
+              <span class="step-number-pill">3</span>
+              <span>Cole o código, confira o valor e confirme a transferência</span>
+            </div>
+          </div>
+
+          <!-- Botão para Simular Confirmação -->
+          <!-- Botão para Confirmar Pagamento -->
+          <button type="button" id="btnVerifyPayment" class="btn-primary-cta" style="margin-top:22px;">
+            <span class="cta-arrow-icon">➔</span>
+            <div class="cta-content-wrap">
+              <span class="cta-headline">JÁ REALIZEI O PAGAMENTO VIA PIX</span>
+              <span class="cta-subdetail">Confirmar transferência e liberar comprovante</span>
+            </div>
+          </button>
+        </div>
+      </section>
+
+
+      <!-- ========================================================
+           PASSO 15: SUCESSO / COMPROVANTE OFICIAL DE LIBERAÇÃO
+           ======================================================== -->
+      <section id="step-15" class="step-view">
+        <div class="glass-card success-screen-card">
+          <div class="success-checkmark-circle">
+            <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20 6 9 17l-5-5"/>
+            </svg>
+          </div>
+
+          <h1 class="step-title" style="font-size:2rem; margin-bottom:8px;">Pagamento confirmado!</h1>
+          <p class="step-subtitle">O valor foi enviado com sucesso para a sua conta bancária cadastrada.</p>
+
+          <!-- Aviso de Contrato Enviado por E-mail -->
+          <div class="contract-email-alert">
+            <div class="contract-email-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+            </div>
+            <div class="contract-email-content">
+              <h4>Contrato oficial enviado para seu e-mail!</h4>
+              <p>
+                Uma via autenticada da sua <strong>Cédula de Crédito Bancário (CCB)</strong> foi encaminhada para:
+                <br /><strong id="receiptContractEmail" style="color:var(--primary); font-size:0.9rem;">seu.email@exemplo.com</strong>
+              </p>
+              <p style="font-size:0.75rem; color:var(--text-muted); margin-top:6px;">
+                Conforme a <strong>MP nº 2.200-2/2001</strong>, você também pode assinar os documentos digitalmente agora mesmo pelo link abaixo.
+              </p>
+            </div>
+          </div>
+
+          <!-- Botão Estilo DocuSign -->
+          <div style="margin:16px 0 22px;">
+            <button type="button" id="btnOpenDocuSign" class="btn-docusign-action">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                <path d="M12 20h9"/>
+                <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/>
+              </svg>
+              <span>Acessar e Assinar Documentos (Estilo DocuSign)</span>
+            </button>
+          </div>
+
+          <!-- Comprovante Oficial Digital -->
+          <div class="comprovante-receipt-box">
+            <div class="receipt-header">
+              <span style="font-weight:900; font-size:1.05rem; color:#FFFFFF;">Comprovante de Transferência PIX</span>
+              <span style="font-size:0.7rem; font-weight:800; background:rgba(0,210,106,0.15); color:var(--primary); padding:3px 8px; border-radius:var(--radius-full);">LIQUIDADO</span>
+            </div>
+
+            <div class="receipt-row">
+              <span class="label">Valor Transferido</span>
+              <span id="receiptFinalAmount" class="value" style="color:var(--primary); font-size:1.1rem;">R$ 10.000,00</span>
+            </div>
+            <div class="receipt-row">
+              <span class="label">Favorecido(a)</span>
+              <span id="receiptRecipientName" class="value">Cliente Cred+</span>
+            </div>
+            <div class="receipt-row">
+              <span class="label">CPF do Favorecido</span>
+              <span id="receiptRecipientCpf" class="value">***.***.***-**</span>
+            </div>
+            <div class="receipt-row">
+              <span class="label">Instituição Destino</span>
+              <span id="receiptRecipientBank" class="value">Nubank (Nu Pagamentos S.A.)</span>
+            </div>
+            <div class="receipt-row">
+              <span class="label">Chave PIX</span>
+              <span id="receiptRecipientPixKey" class="value">Chave PIX cadastrada</span>
+            </div>
+            <div class="receipt-row">
+              <span class="label">Data e Hora</span>
+              <span id="receiptTimestamp" class="value">Hoje</span>
+            </div>
+            <div class="receipt-row" style="border-top:1px dashed var(--border-medium); margin-top:8px; padding-top:10px;">
+              <span class="label">ID da Transação / E2E</span>
+              <span id="receiptAuthCode" class="value" style="font-family:monospace; font-size:0.7rem; color:var(--text-muted);">E00038166202409241030999</span>
+            </div>
+          </div>
+
+          <!-- Card de Status da Assinatura -->
+          <div id="contractSignStatusCard" style="background:var(--bg-card-inner); border:1px solid var(--border-subtle); border-radius:var(--radius-md); padding:14px 18px; margin:16px 0 22px; display:flex; align-items:center; justify-content:space-between; gap:12px;">
+            <div style="text-align:left;">
+              <p style="font-size:0.75rem; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.05em; font-weight:700;">Status do Contrato (DocuSign)</p>
+              <p id="contractSignStatusText" style="font-size:0.9rem; font-weight:800; color:#FBBF24; margin-top:2px;">Aguardando Assinatura do Titular</p>
+            </div>
+            <button type="button" id="btnSignQuickLink" style="background:rgba(255,255,255,0.08); border:1px solid var(--border-medium); color:#FFFFFF; font-size:0.78rem; font-weight:700; padding:8px 14px; border-radius:var(--radius-sm); cursor:pointer;">
+              Assinar agora
+            </button>
+          </div>
+
+          <button type="button" class="btn-primary-cta" onclick="location.reload();">
+            <span>Realizar Nova Simulação</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M21 12a9 9 0 0 0-9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+              <path d="M3 3v5h5"/>
+            </svg>
+          </button>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Rodapé Institucional e Selos de Confiança -->
+    <footer class="app-footer">
+      <div class="footer-inner">
+        <!-- Marca Oficial Cred+ Soluções Financeiras (Idêntico ao Rodapé da Imagem) -->
+        <div style="display:flex; flex-direction:column; align-items:center; margin-bottom: 22px;">
+          <div style="font-size: 1.65rem; font-weight: 900; letter-spacing: -0.03em; color: #FFFFFF; line-height: 1;">
+            CRED<span style="color: var(--primary);">+</span>
+          </div>
+          <div style="font-size: 0.62rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.8); margin-top: 4px;">
+            SOLUÇÕES FINANCEIRAS
+          </div>
+        </div>
+
+        <!-- Selos de Segurança -->
+        <div class="security-seals-row">
+          <div class="seal-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+            <span>Banco Central do Brasil</span>
+          </div>
+          <div class="seal-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="11" x="3" y="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            <span>Criptografia 256-Bit</span>
+          </div>
+          <div class="seal-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 6 9 17l-5-5"/></svg>
+            <span>LGPD 100% Protegido</span>
+          </div>
+          <div class="seal-item">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+            <span>RA1000 Reclame Aqui</span>
+          </div>
+        </div>
+
+        <div class="footer-links">
+          <a href="#termos" onclick="alert('Cred+ Soluções Financeiras - Termos e Condições Contratuais em conformidade com o Banco Central do Brasil.'); return false;">Termos de Uso</a>
+          <a href="#privacidade" onclick="alert('Seus dados estão protegidos nos termos da Lei Geral de Proteção de Dados (Lei nº 13.709/2018).'); return false;">Política de Privacidade</a>
+          <a href="#seguranca" onclick="alert('Transações certificadas com criptografia de ponta a ponta e auditoria contínua.'); return false;">Segurança Bancária</a>
+        </div>
+
+        <p style="margin-bottom:8px;">
+          Cred+ Soluções Financeiras e Correspondente Bancário Digital Ltda. CNPJ: 42.189.924/0001-83.<br />
+          Avenida Paulista, 1842 - Torre Norte, 14º andar - Bela Vista, São Paulo - SP, CEP 01310-923.
+        </p>
+        <p style="font-size:0.68rem; color:var(--text-subtle);">
+          A Cred+ é um correspondente bancário autorizado nos termos da Resolução nº 3.954 do Banco Central do Brasil. Taxas de juros a partir de 1,49% a.m. (19,4% a.a.) até 3,99% a.m. Prazo de quitação de 6 a 36 meses. Exemplo: Um empréstimo de R$ 10.000,00 em 12 parcelas de R$ 916,23 totalizará R$ 10.994,75 (CET de 1,78% a.m.).
+        </p>
+      </div>
+    </footer>
+
+  <!-- ========================================================
+       MODAL DE ASSINATURA ELETRÔNICA ESTILO DOCUSIGN
+       ======================================================== -->
+  <div id="docusignModal" class="docusign-modal-backdrop">
+    <div class="docusign-modal-dialog">
+      <!-- Barra Superior Estilo DocuSign -->
+      <div class="docusign-header-bar">
+        <div class="docusign-logo-wrap">
+          <div style="background:#09357B; color:#FFFFFF; font-weight:900; font-size:0.88rem; padding:4px 10px; border-radius:4px; letter-spacing:0.04em;">
+            DocuSign
+          </div>
+          <span style="font-size:0.8rem; font-weight:700; color:var(--text-muted); display:inline-block;">eSignature Suite</span>
+          <span id="docusignHeaderBadge" class="docusign-badge-pill pending">PRECISA ASSINAR</span>
+        </div>
+        <button type="button" id="btnCloseDocuSign" class="btn-close-docusign" aria-label="Fechar DocuSign">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6 6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+
+      <!-- Corpo com Rolagem e Papel Timbrado -->
+      <div class="docusign-scroll-body">
+        <div class="docusign-paper">
+          <!-- Cabeçalho do Contrato -->
+          <div class="docusign-paper-header">
+            <div>
+              <h2 class="docusign-doc-title">CÉDULA DE CRÉDITO BANCÁRIO (CCB) DIGITAL</h2>
+              <p class="docusign-doc-subtitle">Nº CCB-2026-99420-BR · Em conformidade com a MP nº 2.200-2/2001 e Lei nº 10.931/2004</p>
+            </div>
+            <div style="text-align:right;">
+              <span style="font-size:0.68rem; font-weight:800; background:#0F172A; color:#FFFFFF; padding:4px 8px; border-radius:4px;">VIA DO CLIENTE</span>
+            </div>
+          </div>
+
+          <!-- Quadro I: Partes -->
+          <h3 class="docusign-section-title">I. Identificação das Partes Contratantes</h3>
+          <table class="docusign-table">
+            <tr>
+              <td class="label-col">Credor / Financiador:</td>
+              <td class="val-col">CRED+ SOLUÇÕES FINANCEIRAS & CRÉDITO DIGITAL S.A. (CNPJ 42.189.924/0001-83)</td>
+            </tr>
+            <tr>
+              <td class="label-col">Devedor / Titular:</td>
+              <td class="val-col"><span id="dsCustomerName">Cliente Cred+</span></td>
+            </tr>
+            <tr>
+              <td class="label-col">CPF:</td>
+              <td class="val-col"><span id="dsCustomerCpf">***.***.***-**</span></td>
+            </tr>
+            <tr>
+              <td class="label-col">E-mail Cadastrado:</td>
+              <td class="val-col"><span id="dsCustomerEmail">seu.email@exemplo.com</span></td>
+            </tr>
+            <tr>
+              <td class="label-col">Telefone / Celular:</td>
+              <td class="val-col"><span id="dsCustomerPhone">(00) 00000-0000</span></td>
+            </tr>
+            <tr>
+              <td class="label-col">Domicílio / Endereço:</td>
+              <td class="val-col"><span id="dsCustomerAddress">Endereço cadastrado</span></td>
+            </tr>
+          </table>
+
+          <!-- Quadro II: Condições Financeiras -->
+          <h3 class="docusign-section-title">II. Especificações do Financiamento & Liberação PIX</h3>
+          <table class="docusign-table">
+            <tr>
+              <td class="label-col">Valor Total Financiado:</td>
+              <td class="val-col" style="color:#059669; font-weight:800;"><span id="dsLoanAmount">R$ 10.000,00</span></td>
+            </tr>
+            <tr>
+              <td class="label-col">Forma de Desembolso:</td>
+              <td class="val-col">Transferência Eletrônica Instantânea (PIX) Imediata</td>
+            </tr>
+            <tr>
+              <td class="label-col">Instituição & Chave PIX:</td>
+              <td class="val-col"><span id="dsBankDest">Chave cadastrada</span></td>
+            </tr>
+            <tr>
+              <td class="label-col">Plano de Amortização:</td>
+              <td class="val-col"><span id="dsInstallments">12 parcelas mensais de R$ 916,23</span></td>
+            </tr>
+            <tr>
+              <td class="label-col">Taxa de Juros Efetiva:</td>
+              <td class="val-col">1,49% a.m. (19,4% a.a.) — Taxa Prefixada</td>
+            </tr>
+            <tr>
+              <td class="label-col">Garantia / Apólice:</td>
+              <td class="val-col">Seguro Prestamista de Proteção Financeira e Quitação Liquidado</td>
+            </tr>
+          </table>
+
+          <!-- Quadro III: Cláusulas -->
+          <h3 class="docusign-section-title">III. Cláusulas e Condições Gerais</h3>
+          <p style="margin-bottom:8px;">
+            <strong>CLÁUSULA PRIMEIRA – DA PROMESSA DE PAGAMENTO:</strong> Pela presente Cédula de Crédito Bancário, o EMITENTE promete pagar pontualmente ao CREDOR as parcelas convencionadas no Quadro II, reconhecendo a dívida líquida, certa e exigível.
+          </p>
+          <p style="margin-bottom:8px;">
+            <strong>CLÁUSULA SEGUNDA – DA LIBERAÇÃO IMEDIATA:</strong> O montante do crédito acordado é creditado na conta bancária do EMITENTE via PIX no ato da validação eletrônica deste instrumento.
+          </p>
+          <p style="margin-bottom:8px;">
+            <strong>CLÁUSULA TERCEIRA – DA ASSINATURA ELETRÔNICA:</strong> As partes reconhecem a plena validade jurídica, eficácia e executividade deste contrato assinado por meio eletrônico, consoante o disposto no art. 10, § 2º da Medida Provisória nº 2.200-2/2001 e na Lei Federal nº 14.063/2020.
+          </p>
+
+          <!-- Quadro IV: Área de Assinatura DocuSign -->
+          <div style="margin-top:28px;">
+            <div style="display:flex; align-items:center; gap:8px; margin-bottom:10px;">
+              <span class="docusign-tag-amber" id="dsSignHereTag">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+                ASSINE AQUI
+              </span>
+              <span style="font-size:0.75rem; color:#64748B;">Clique no campo pontilhado abaixo para assinar digitalmente:</span>
+            </div>
+
+            <!-- Box interativo de Assinatura -->
+            <div id="dsSignBox" class="docusign-sign-box">
+              <div id="dsUnsignedState">
+                <p style="font-size:0.9rem; font-weight:700; color:#2563EB;">Clique para inserir sua assinatura digital oficial</p>
+                <p style="font-size:0.75rem; color:#64748B; margin-top:4px;">Gera rubrica eletrônica com certificação de autenticidade ICP-Brasil</p>
+              </div>
+
+              <div id="dsSignedState" style="display:none;">
+                <p id="dsSignatureOutput" class="docusign-signature-font">Assinatura Digital</p>
+                <div class="docusign-signed-stamp">
+                  <div class="docusign-stamp-badge">✓ CERTIFICADO DIGITAL</div>
+                  <div style="font-size:0.72rem; color:#065F46; line-height:1.4;">
+                    <strong>Documento Assinado Eletronicamente via DocuSign</strong><br />
+                    Signatário: <span id="dsStampSigner">Cliente Cred+</span> | CPF: <span id="dsStampCpf">***.***.***-**</span><br />
+                    Timestamp: <span id="dsStampTime">--</span> | Hash SHA-256: <span id="dsStampHash" style="font-family:monospace;">8f4b...92ce</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rodapé da DocuSign -->
+      <div class="docusign-footer-bar">
+        <div style="font-size:0.75rem; color:var(--text-muted); display:flex; align-items:center; gap:6px;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/></svg>
+          <span>Certificação Digital ICP-Brasil · MP 2.200-2/2001</span>
+        </div>
+        <div style="display:flex; gap:10px;">
+          <button type="button" id="btnDownloadPdfContract" style="font-size:0.82rem; padding:8px 16px; border-radius:var(--radius-sm); border:1px solid var(--border-medium); background:var(--bg-input); color:#FFFFFF; cursor:pointer;" disabled>
+            Baixar PDF
+          </button>
+          <button type="button" id="btnConfirmDocuSignSignature" class="btn-primary-cta" style="font-size:0.82rem; padding:8px 20px; border-radius:var(--radius-sm); margin:0;">
+            <span>Confirmar Assinatura</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Flutuante de Prova Social -->
+  <div id="socialProofToast" class="social-proof-toast">
+    <div id="toastAvatarLetter" class="toast-avatar">M</div>
+    <div id="toastTextContent" class="toast-content">
+      <strong>Marcos V.</strong> (Salvador, BA) <span class="highlight">recebeu R$ 6.000,00 no PIX</span> · agora mesmo
+    </div>
+  </div>
+
+  <!-- Script da Aplicação -->
+  <script src="js/app.js"></script>
+</body>
+</html>

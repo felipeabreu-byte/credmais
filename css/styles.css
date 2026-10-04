@@ -1,0 +1,3468 @@
+/* ==========================================================================
+   CRED+ DESIGN SYSTEM
+   Paleta Sofisticada, Séria e Chamativa para Instituição Financeira Digital
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Caveat:wght@600;700&display=swap');
+
+:root {
+  /* Cores Principais - Paleta Oficial Cred+ (Laranja Alta Conversão & Azul Marinho Profundo) */
+  --bg-dark: #07162C;
+  --bg-canvas: #091E3A;
+  --bg-card: rgba(11, 28, 54, 0.94);
+  --bg-card-solid: #0D264A;
+  --bg-card-inner: rgba(16, 39, 74, 0.72);
+  --bg-card-highlight: rgba(255, 94, 0, 0.08);
+  --bg-input: #0E274D;
+  --bg-input-focus: #14386B;
+  
+  /* Laranja Alta Conversão Cred+ (Foco em CTA e Impacto Visual Máximo) */
+  --primary: #FF5A00;
+  --primary-hover: #FF701C;
+  --primary-light: #FF853D;
+  --primary-dark: #D64200;
+  --primary-glow: 0 8px 25px rgba(255, 90, 0, 0.45);
+  --primary-glow-lg: 0 12px 35px rgba(255, 90, 0, 0.65);
+  --primary-gradient: linear-gradient(180deg, #FF7200 0%, #FA5200 50%, #E63D00 100%);
+  --primary-gradient-subtle: linear-gradient(135deg, rgba(255, 90, 0, 0.15) 0%, rgba(255, 90, 0, 0.03) 100%);
+  
+  /* Azul Real, Ciano & Marinho Institucional */
+  --brand-navy: #07162C;
+  --brand-navy-light: #0C2B54;
+  --accent-blue: #1E50A2;
+  --accent-cyan: #38BDF8;
+  --accent-blue-gradient: linear-gradient(135deg, #1E50A2 0%, #0C2B54 100%);
+  
+  /* Dourado Ouro para Moedas 3D e Benefícios */
+  --accent-gold: #F59E0B;
+  --accent-gold-light: #FBBF24;
+  --accent-gold-gradient: linear-gradient(135deg, #FCD34D 0%, #F59E0B 100%);
+  
+  /* Textos */
+  --text-pure: #FFFFFF;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --text-subtle: #64748B;
+  --text-dark: #07162C;
+  
+  /* Bordas */
+  --border-subtle: rgba(255, 255, 255, 0.09);
+  --border-medium: rgba(255, 255, 255, 0.16);
+  --border-active: rgba(255, 90, 0, 0.6);
+  --border-active-glow: 0 0 0 2px rgba(255, 90, 0, 0.3);
+  
+  /* Estados */
+  --success: #00D26A; /* Verde Esmeralda para APROVADO e confirmações */
+  --danger: #EF4444;
+  --warning: #F59E0B;
+  
+  /* Geometria */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 28px;
+  --radius-full: 9999px;
+  
+  /* Sombras */
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 10px 30px -5px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
+  --shadow-card: 0 15px 35px -5px rgba(0, 0, 0, 0.55), 0 0 0 1px var(--border-subtle);
+  
+  /* Tipografia */
+  --font-family: 'Plus Jakarta Sans', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --transition-fast: 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-base: 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-family: var(--font-family);
+  background-color: var(--bg-dark);
+  color: var(--text-main);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  min-height: 100vh;
+  background: 
+    radial-gradient(ellipse 90% 45% at 50% -5%, rgba(255, 90, 0, 0.20) 0%, transparent 65%),
+    radial-gradient(ellipse 70% 50% at 90% 25%, rgba(255, 110, 0, 0.12) 0%, transparent 55%),
+    radial-gradient(ellipse 80% 60% at 10% 70%, rgba(14, 45, 88, 0.45) 0%, transparent 65%),
+    linear-gradient(180deg, #07162C 0%, #0A1F3C 45%, #05101F 100%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  overflow-x: hidden;
+  position: relative;
+}
+
+/* Fundo com Malha Sutil de Grid de Alta Tecnologia */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+  background-size: 40px 40px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+input, button, select, textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* ==========================================================================
+   LAYOUT PRINCIPAL
+   ========================================================================== */
+
+.app-wrapper {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-container {
+  width: 100%;
+  max-width: 580px;
+  margin: 0 auto;
+  padding: 0 16px 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   HEADER BANCÁRIO DE CONFIANÇA
+   ========================================================================== */
+
+/* ==========================================================================
+   BARRA SUPERIOR DE IMPACTO E ANÚNCIO (CTA ALTO)
+   ========================================================================== */
+
+.top-announcement-bar {
+  background: linear-gradient(90deg, #07162C 0%, #0F2F59 50%, #07162C 100%);
+  border-bottom: 1px solid rgba(255, 90, 0, 0.35);
+  padding: 8px 16px;
+  position: relative;
+  z-index: 35;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
+
+.top-announcement-content {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-align: center;
+}
+
+.announcement-pill {
+  font-size: 0.65rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--primary);
+  color: #FFFFFF;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 0 10px rgba(255, 90, 0, 0.5);
+  animation: pulse-badge 2s infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.85; transform: scale(1.04); }
+}
+
+.announcement-text {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  letter-spacing: -0.01em;
+}
+
+.announcement-text strong {
+  color: var(--primary);
+  font-weight: 900;
+}
+
+/* ==========================================================================
+   HEADER BANCÁRIO DE CONFIANÇA
+   ========================================================================== */
+
+.app-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  background: rgba(7, 22, 44, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 10px 18px;
+}
+
+.header-content {
+  max-width: 680px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logotipo Oficial Cred+ com Estrela e Soluções Financeiras */
+.brand-logo-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px 6px 10px;
+  background: linear-gradient(135deg, #FF6600 0%, #FA4C00 100%);
+  border: 2px solid rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  box-shadow: 0 4px 14px rgba(255, 90, 0, 0.45);
+  transition: transform 0.2s ease;
+}
+
+.brand-logo-badge:hover {
+  transform: scale(1.03);
+}
+
+.brand-star-icon {
+  color: #FFFFFF;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+  flex-shrink: 0;
+}
+
+.brand-text-col {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  text-align: left;
+}
+
+.brand-title-main {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.35);
+}
+
+.brand-title-main .plus-symbol {
+  color: #FFF;
+  font-weight: 900;
+}
+
+.brand-tagline-sub {
+  font-size: 0.52rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.92);
+  margin-top: 2px;
+}
+
+.header-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-subtle);
+  transition: var(--transition-fast);
+}
+
+.header-action-btn:hover {
+  color: var(--text-main);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--border-medium);
+}
+
+.header-security-badge {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background: rgba(255, 90, 0, 0.14);
+  border: 1px solid rgba(255, 90, 0, 0.35);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+/* ==========================================================================
+   BARRA DE PROGRESSO DO FLUXO
+   ========================================================================== */
+
+.progress-container {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.06);
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  width: 10%;
+  background: var(--primary-gradient);
+  box-shadow: 0 0 12px var(--primary);
+  transition: width 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   TIPOGRAFIA DE TÍTULOS E SUBTÍTULOS
+   ========================================================================== */
+
+.step-header {
+  text-align: center;
+  margin: 28px 0 24px;
+}
+
+.step-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--primary);
+  background: rgba(0, 210, 106, 0.1);
+  border: 1px solid rgba(0, 210, 106, 0.25);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-bottom: 12px;
+  box-shadow: 0 0 16px rgba(0, 210, 106, 0.15);
+}
+
+.step-title {
+  font-size: 1.85rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-pure);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.step-subtitle {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  max-width: 440px;
+  margin: 0 auto;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   CARDS DE CONTEÚDO E GLASSMORPHISM
+   ========================================================================== */
+
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: var(--shadow-card);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+}
+
+.card-inner-box {
+  background: var(--bg-card-inner);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 16px 20px;
+}
+
+/* ==========================================================================
+   SIMULADOR DE EMPRÉSTIMO (PASSO 1)
+   ========================================================================== */
+
+.simulation-card {
+  padding: 28px 24px;
+}
+
+.amount-stepper-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 4px;
+}
+
+.stepper-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-medium);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.stepper-btn:hover {
+  background: rgba(0, 210, 106, 0.15);
+  border-color: var(--primary);
+  color: var(--primary);
+  transform: scale(1.08);
+}
+
+.stepper-btn:active {
+  transform: scale(0.92);
+}
+
+.amount-display-box {
+  text-align: center;
+  padding: 6px 0 10px;
+}
+
+.amount-label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: var(--text-subtle);
+  margin-bottom: 4px;
+}
+
+.amount-huge {
+  font-size: 3.1rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  line-height: 1.05;
+  font-variant-numeric: tabular-nums;
+  text-shadow: 0 4px 20px rgba(0, 210, 106, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+
+.amount-huge .currency {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-right: 4px;
+}
+
+/* Slider Customizado */
+.slider-container {
+  margin: 14px 0 10px;
+  position: relative;
+}
+
+.custom-range {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 9999px;
+  background: linear-gradient(to right, var(--primary) 0%, var(--primary) 45%, #192a47 45%, #192a47 100%);
+  outline: none;
+  transition: background 0.1s;
+}
+
+.custom-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  cursor: pointer;
+  border: 4px solid var(--primary);
+  box-shadow: 0 0 14px rgba(0, 210, 106, 0.7), 0 3px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.custom-range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 20px rgba(0, 210, 106, 0.9), 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.custom-range::-moz-range-thumb {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  cursor: pointer;
+  border: 4px solid var(--primary);
+  box-shadow: 0 0 14px rgba(0, 210, 106, 0.7), 0 3px 8px rgba(0, 0, 0, 0.4);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.slider-limits {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-subtle);
+  margin-top: 8px;
+}
+
+.slider-step-indicator {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2px 8px;
+  border-radius: 99px;
+}
+
+/* Atalhos Rápidos de Valores */
+.quick-amounts-bar {
+  display: flex;
+  gap: 8px;
+  margin: 14px 0 6px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+  scrollbar-width: none;
+}
+
+.quick-amounts-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.quick-amount-pill {
+  flex: 1;
+  min-width: 66px;
+  padding: 8px 6px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  transition: all 0.18s ease;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.quick-amount-pill:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  border-color: var(--border-medium);
+}
+
+.quick-amount-pill.active {
+  background: rgba(0, 210, 106, 0.15);
+  border-color: var(--primary);
+  color: var(--primary);
+  font-weight: 800;
+  box-shadow: 0 0 12px rgba(0, 210, 106, 0.25);
+}
+
+/* Divisor Fino */
+.card-divider {
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 20px 0;
+}
+
+/* Seletor de Parcelas */
+.installments-section {
+  text-align: center;
+}
+
+.section-mini-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 14px;
+}
+
+.installments-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.installment-btn {
+  position: relative;
+  padding: 14px 6px 12px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  transition: var(--transition-fast);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.installment-btn .inst-count {
+  font-size: 1.15rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.installment-btn .inst-subval {
+  font-size: 0.68rem;
+  color: var(--text-subtle);
+  margin-top: 4px;
+  font-weight: 600;
+  transition: color 0.15s ease;
+}
+
+.installment-btn .inst-badge {
+  position: absolute;
+  top: -9px;
+  font-size: 0.58rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--accent-gold);
+  color: #070d18;
+  border-radius: 99px;
+  padding: 2px 7px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+  white-space: nowrap;
+}
+
+.installment-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--border-medium);
+  color: var(--text-main);
+}
+
+.installment-btn.active {
+  background: var(--primary-gradient);
+  color: var(--text-dark);
+  font-weight: 800;
+  border-color: transparent;
+  box-shadow: var(--primary-glow);
+  transform: translateY(-2px);
+}
+
+.installment-btn.active .inst-subval {
+  color: rgba(7, 13, 24, 0.85);
+  font-weight: 800;
+}
+
+/* Detalhes do Cálculo */
+.calc-summary-box {
+  background: linear-gradient(180deg, rgba(20, 36, 62, 0.7) 0%, rgba(13, 24, 42, 0.9) 100%);
+  border: 1px solid rgba(0, 210, 106, 0.2);
+  border-radius: var(--radius-lg);
+  padding: 18px 20px;
+  margin-top: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calc-left .calc-label {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.calc-left .calc-rate {
+  font-size: 0.75rem;
+  color: var(--primary);
+  font-weight: 600;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.calc-first-pay {
+  font-size: 0.72rem;
+  color: var(--text-subtle);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.calc-first-pay svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.calc-right {
+  text-align: right;
+}
+
+.calc-right .calc-value {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+.calc-right .calc-total {
+  font-size: 0.72rem;
+  color: var(--text-subtle);
+  margin-top: 2px;
+}
+
+/* Grade de Benefícios & Confiança do Passo 1 */
+.sim-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.sim-benefit-item {
+  background: rgba(13, 24, 42, 0.7);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 12px 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+  backdrop-filter: blur(8px);
+}
+
+.sim-benefit-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(0, 210, 106, 0.12);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sim-benefit-title {
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 1.2;
+}
+
+.sim-benefit-desc {
+  font-size: 0.68rem;
+  color: var(--text-subtle);
+  line-height: 1.3;
+  margin-top: 2px;
+}
+
+@media (max-width: 600px) {
+  .sim-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .amount-huge {
+    font-size: 2.6rem;
+  }
+  .stepper-btn {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* ==========================================================================
+   BOTÃO DE AÇÃO PRIMÁRIO (CTA)
+   ========================================================================== */
+
+.btn-primary-cta {
+  width: 100%;
+  margin-top: 20px;
+  padding: 16px 22px;
+  background: linear-gradient(180deg, #FF7700 0%, #FA5000 50%, #E63A00 100%);
+  color: #FFFFFF;
+  font-size: 1.12rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  text-transform: uppercase;
+  border-radius: 20px;
+  border: 3.5px solid #FFFFFF;
+  box-shadow: 
+    0 8px 25px rgba(255, 85, 0, 0.55), 
+    0 4px 0 #B82E00, 
+    inset 0 2px 4px rgba(255, 255, 255, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: visible;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  animation: cta-attention-pulse 3s infinite ease-in-out;
+}
+
+@keyframes cta-attention-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 8px 25px rgba(255, 85, 0, 0.55), 0 4px 0 #B82E00, inset 0 2px 4px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: 0 12px 34px rgba(255, 85, 0, 0.8), 0 4px 0 #B82E00, inset 0 2px 6px rgba(255, 255, 255, 0.65), 0 0 22px rgba(255, 120, 0, 0.5);
+  }
+}
+
+.btn-primary-cta::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -60%;
+  width: 35%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: rotate(25deg);
+  animation: button-shine 3.2s infinite;
+  border-radius: 20px;
+  pointer-events: none;
+}
+
+@keyframes button-shine {
+  0% { left: -60%; }
+  22% { left: 140%; }
+  100% { left: 140%; }
+}
+
+.btn-primary-cta:hover {
+  transform: translateY(-2px) scale(1.025);
+  box-shadow: 0 14px 38px rgba(255, 85, 0, 0.85), 0 5px 0 #B82E00, inset 0 2px 6px rgba(255, 255, 255, 0.65);
+  filter: brightness(1.06);
+}
+
+.btn-primary-cta:active {
+  transform: translateY(2px) scale(0.99);
+  box-shadow: 0 4px 12px rgba(255, 85, 0, 0.5), 0 1px 0 #B82E00;
+}
+
+.btn-primary-cta:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+  animation: none;
+}
+
+/* Elementos Internos do CTA */
+.cta-arrow-icon {
+  font-size: 1.4rem;
+  font-weight: 900;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
+}
+
+.btn-primary-cta:hover .cta-arrow-icon {
+  transform: translateX(4px);
+}
+
+.cta-content-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.15;
+}
+
+.cta-headline {
+  font-size: 1.08rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+}
+
+.cta-subdetail {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: none;
+  color: rgba(255, 255, 255, 0.92);
+  margin-top: 3px;
+  letter-spacing: 0.01em;
+}
+
+/* Indicador de Clique Cursor (Estilo do Criativo Original) */
+.cta-pointer-cursor {
+  position: absolute;
+  right: -8px;
+  bottom: -14px;
+  pointer-events: none;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.55));
+  animation: pointer-click 1.6s ease-in-out infinite;
+  z-index: 10;
+}
+
+@keyframes pointer-click {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  45% {
+    transform: translate(-3px, -3px) scale(0.88);
+  }
+  60% {
+    transform: translate(-1px, -1px) scale(0.96);
+  }
+}
+
+/* ==========================================================================
+   FORMULÁRIOS E INPUTS
+   ========================================================================== */
+
+.form-group {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.form-label .label-tag {
+  font-size: 0.7rem;
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.input-with-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 16px;
+  color: var(--text-subtle);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-input {
+  width: 100%;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-pure);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+.form-input.has-icon {
+  padding-left: 48px;
+}
+
+.form-input:focus {
+  background: var(--bg-input-focus);
+  border-color: var(--primary);
+  box-shadow: var(--border-active-glow);
+}
+
+.form-input::placeholder {
+  color: var(--text-subtle);
+  font-weight: 400;
+}
+
+.form-input:disabled, .form-input[readonly] {
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--text-muted);
+  cursor: default;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+/* Caixa de Garantia LGPD / Segurança */
+.security-note-box {
+  background: rgba(0, 210, 106, 0.05);
+  border: 1px solid rgba(0, 210, 106, 0.18);
+  border-radius: var(--radius-md);
+  padding: 14px 16px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.security-note-box svg {
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.security-note-box p {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+}
+
+/* Seletores de Rádio e Chips */
+.radio-chip-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.radio-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 18px;
+  border-radius: var(--radius-md);
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.radio-chip:hover {
+  background: var(--bg-input-focus);
+  border-color: var(--border-medium);
+}
+
+.radio-chip.selected {
+  border-color: var(--primary);
+  background: rgba(0, 210, 106, 0.08);
+  color: #FFFFFF;
+}
+
+.radio-circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid var(--text-subtle);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.radio-chip.selected .radio-circle {
+  border-color: var(--primary);
+  background: var(--primary);
+}
+
+.radio-chip.selected .radio-circle::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--text-dark);
+}
+
+/* Grade de Opções (Motivo e Ocupação) */
+.options-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.option-select-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-main);
+  font-size: 0.88rem;
+  font-weight: 600;
+  text-align: left;
+  transition: var(--transition-fast);
+}
+
+.option-select-btn:hover {
+  border-color: var(--border-medium);
+  background: var(--bg-input-focus);
+}
+
+.option-select-btn.selected {
+  border-color: var(--primary);
+  background: rgba(0, 210, 106, 0.08);
+  color: #FFFFFF;
+}
+
+.option-select-btn .dot-indicator {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--text-subtle);
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.option-select-btn.selected .dot-indicator {
+  border-color: var(--primary);
+  background: var(--primary);
+}
+
+/* Grade de Sim/Não/Não sei */
+.tri-state-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.tri-state-btn {
+  padding: 14px;
+  border-radius: var(--radius-md);
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-align: center;
+  transition: var(--transition-fast);
+}
+
+.tri-state-btn:hover {
+  background: var(--bg-input-focus);
+}
+
+.tri-state-btn.selected {
+  border-color: var(--primary);
+  background: rgba(0, 210, 106, 0.12);
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   TELA DE ANÁLISE COM IA EM TEMPO REAL (PASSO 6)
+   ========================================================================== */
+
+.analysis-card {
+  text-align: center;
+  padding: 40px 24px;
+  background: 
+    radial-gradient(circle at 50% 30%, rgba(0, 210, 106, 0.15) 0%, transparent 60%),
+    var(--bg-card);
+}
+
+.radar-gauge-wrapper {
+  position: relative;
+  width: 140px;
+  height: 140px;
+  margin: 0 auto 24px;
+}
+
+.radar-svg {
+  transform: rotate(-90deg);
+  width: 100%;
+  height: 100%;
+}
+
+.radar-circle-bg {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.08);
+  stroke-width: 8;
+}
+
+.radar-circle-progress {
+  fill: none;
+  stroke: var(--primary);
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-dasharray: 377;
+  stroke-dashoffset: 377;
+  transition: stroke-dashoffset 0.25s ease;
+  filter: drop-shadow(0 0 10px rgba(0, 210, 106, 0.8));
+}
+
+.radar-inner-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.radar-percentage {
+  font-size: 2.1rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.radar-label {
+  font-size: 0.65rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--primary);
+  margin-top: 4px;
+}
+
+.analysis-checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 28px;
+  text-align: left;
+}
+
+.analysis-check-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px 16px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: var(--transition-fast);
+}
+
+.analysis-check-item.active {
+  background: rgba(0, 210, 106, 0.06);
+  border-color: rgba(0, 210, 106, 0.25);
+  color: var(--text-main);
+}
+
+.analysis-check-item.completed {
+  background: rgba(0, 210, 106, 0.1);
+  border-color: rgba(0, 210, 106, 0.4);
+  color: #FFFFFF;
+}
+
+.check-icon-box {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: var(--transition-fast);
+}
+
+.analysis-check-item.completed .check-icon-box {
+  background: var(--primary);
+  color: var(--text-dark);
+}
+
+/* Spinner */
+.spinner-mini {
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   TELA DE CRÉDITO APROVADO COM CONFETES (PASSO 7)
+   ========================================================================== */
+
+#confettiCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.approved-card {
+  text-align: center;
+  padding: 32px 24px;
+  position: relative;
+  background: 
+    radial-gradient(circle at 50% 0%, rgba(0, 210, 106, 0.22) 0%, transparent 70%),
+    linear-gradient(180deg, #0d1e33 0%, #081120 100%);
+  border: 1px solid rgba(0, 210, 106, 0.35);
+  box-shadow: 0 0 50px rgba(0, 210, 106, 0.18), var(--shadow-lg);
+}
+
+.approved-badge-circle {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: var(--text-dark);
+  box-shadow: 0 0 30px rgba(0, 210, 106, 0.6);
+  animation: pulse-badge 2s infinite ease-in-out;
+}
+
+@keyframes pulse-badge {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 25px rgba(0, 210, 106, 0.5); }
+  50% { transform: scale(1.06); box-shadow: 0 0 38px rgba(0, 210, 106, 0.8); }
+}
+
+.approved-greeting {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 6px;
+}
+
+.approved-title {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: -0.04em;
+  line-height: 1.15;
+  margin-bottom: 8px;
+}
+
+.approved-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  max-width: 380px;
+  margin: 0 auto 24px;
+}
+
+.approved-details-box {
+  background: rgba(8, 16, 30, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.approved-amount-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-subtle);
+  font-weight: 700;
+}
+
+.approved-amount-value {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--primary);
+  letter-spacing: -0.03em;
+  margin: 4px 0 16px;
+  text-shadow: 0 0 20px rgba(0, 210, 106, 0.4);
+}
+
+.approved-grid-info {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 14px;
+}
+
+.approved-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.88rem;
+}
+
+.approved-info-row .row-label {
+  color: var(--text-muted);
+}
+
+.approved-info-row .row-val {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+.approved-perks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  text-align: left;
+  margin: 18px 0 6px;
+}
+
+.approved-perk {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  color: var(--text-main);
+  font-weight: 500;
+}
+
+.approved-perk svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   SELETOR DE DIA DE PAGAMENTO (PASSO 8)
+   ========================================================================== */
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin: 10px 0 24px;
+}
+
+.day-card-btn {
+  padding: 20px 10px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  text-align: center;
+  transition: var(--transition-fast);
+}
+
+.day-card-btn:hover {
+  border-color: var(--border-medium);
+  background: var(--bg-input-focus);
+}
+
+.day-card-btn.selected {
+  border-color: var(--primary);
+  background: rgba(0, 210, 106, 0.12);
+  box-shadow: 0 0 16px rgba(0, 210, 106, 0.2);
+}
+
+.day-number {
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1;
+}
+
+.day-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+.day-card-btn.selected .day-label {
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   TELA DE ABERTURA DA CONTA DIGITAL (PASSO 10)
+   ========================================================================== */
+
+.account-opening-card {
+  text-align: center;
+  padding: 50px 24px;
+  background: var(--bg-card);
+}
+
+.shield-pulse-box {
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+  background: rgba(0, 210, 106, 0.12);
+  border: 2px solid rgba(0, 210, 106, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  color: var(--primary);
+}
+
+.loading-bar-wrapper {
+  width: 100%;
+  max-width: 320px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  margin: 24px auto;
+  overflow: hidden;
+}
+
+.loading-bar-animated {
+  height: 100%;
+  width: 0%;
+  background: var(--primary-gradient);
+  border-radius: 999px;
+  box-shadow: 0 0 12px var(--primary);
+  transition: width 8s cubic-bezier(0.1, 0.7, 0.1, 1);
+}
+
+/* ==========================================================================
+   HOME BANKING / CONTA DIGITAL CRED+ (PASSO 11)
+   ========================================================================== */
+
+.banking-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.banking-user-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 0;
+}
+
+.user-identity {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-avatar-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  color: var(--text-dark);
+  font-weight: 800;
+  font-size: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 210, 106, 0.4);
+}
+
+.user-welcome-label {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.user-full-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.icon-round-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-main);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: var(--transition-fast);
+}
+
+.icon-round-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.badge-dot-alert {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+}
+
+/* Cartão Bancário Digital Black & Emerald */
+.digital-bank-card {
+  background: linear-gradient(135deg, #0e1e36 0%, #07101e 60%, #0b1a2f 100%);
+  border: 1px solid rgba(0, 210, 106, 0.3);
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 45px -10px rgba(0, 0, 0, 0.7), 0 0 35px rgba(0, 210, 106, 0.12);
+}
+
+.card-mesh-bg {
+  position: absolute;
+  top: -30%;
+  right: -20%;
+  width: 260px;
+  height: 260px;
+  background: radial-gradient(circle, rgba(0, 210, 106, 0.22) 0%, transparent 65%);
+  filter: blur(40px);
+  pointer-events: none;
+}
+
+.bank-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.bank-card-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.bank-card-agency {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.balance-box {
+  margin: 24px 0 8px;
+  position: relative;
+  z-index: 2;
+}
+
+.balance-label {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.balance-number-row {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.balance-amount {
+  font-size: 2.7rem;
+  font-weight: 900;
+  letter-spacing: -0.04em;
+  color: #FFFFFF;
+  text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Grade de Ações Rápidas do Banco */
+.quick-actions-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.action-tile-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 16px 8px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  color: var(--text-main);
+  transition: var(--transition-fast);
+}
+
+.action-tile-btn:hover {
+  background: var(--bg-card-hover);
+  border-color: var(--border-medium);
+  transform: translateY(-2px);
+}
+
+.action-icon-circle {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  color: var(--text-main);
+  transition: var(--transition-fast);
+}
+
+.action-tile-btn.highlight .action-icon-circle {
+  background: rgba(0, 210, 106, 0.15);
+  color: var(--primary);
+  border: 1px solid rgba(0, 210, 106, 0.35);
+}
+
+.action-tile-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* CTA Gigante de Saque via PIX */
+.withdraw-pix-cta {
+  width: 100%;
+  padding: 18px 24px;
+  background: var(--primary-gradient);
+  color: #FFFFFF;
+  font-size: 1.15rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  border-radius: var(--radius-xl);
+  border: 3.5px solid #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 8px 30px rgba(255, 90, 0, 0.55), 0 4px 0 #B82E00, inset 0 2px 4px rgba(255, 255, 255, 0.45);
+  transition: var(--transition-fast);
+  margin-top: 6px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.35);
+}
+
+.withdraw-pix-cta:hover {
+  transform: translateY(-2px) scale(1.015);
+  box-shadow: 0 14px 38px rgba(255, 90, 0, 0.8), 0 4px 0 #B82E00;
+}
+
+.cta-icon-text {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Extrato de Transações Recentes */
+.transactions-widget {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 20px;
+}
+
+.widget-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.widget-title {
+  font-size: 0.88rem;
+  font-weight: 800;
+  color: var(--text-main);
+}
+
+.transaction-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.transaction-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.trans-icon-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(0, 210, 106, 0.12);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trans-title {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.trans-date {
+  font-size: 0.75rem;
+  color: var(--text-subtle);
+}
+
+.trans-amount {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   MODAL DE SAQUE VIA PIX (PASSO 12)
+   ========================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.modal-backdrop.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-content-card {
+  width: 100%;
+  max-width: 480px;
+  background: #0d1728;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xl);
+  padding: 26px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.8);
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-backdrop.open .modal-content-card {
+  transform: translateY(0) scale(1);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.modal-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #FFFFFF;
+}
+
+.modal-close-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+}
+
+.pix-amount-pill {
+  background: rgba(0, 210, 106, 0.08);
+  border: 1px solid rgba(0, 210, 106, 0.3);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.pix-type-chips {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+  margin: 8px 0 16px;
+}
+
+.pix-chip {
+  padding: 10px 4px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-align: center;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  transition: var(--transition-fast);
+}
+
+.pix-chip.active {
+  background: var(--primary-gradient);
+  color: var(--text-dark);
+  font-weight: 800;
+  border-color: transparent;
+}
+
+/* ==========================================================================
+   ETAPA FINAL - SEGURO PRESTAMISTA DE CRÉDITO (PASSO 13)
+   ========================================================================== */
+
+#step-13.step-white-theme {
+  background: #F8FAFC;
+  border-radius: var(--radius-2xl);
+  padding: 24px 20px;
+  color: #0F172A;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 6px;
+}
+
+#step-13.step-white-theme h2,
+#step-13.step-white-theme h3 {
+  color: #0F172A !important;
+}
+
+#step-13.step-white-theme > div > p {
+  color: #64748B !important;
+}
+
+/* O quadro hero "Falta pouco" permanece escuro e verde (original) */
+#step-13.step-white-theme .hero-insurance-card,
+.hero-insurance-card {
+  background: 
+    radial-gradient(ellipse at 85% 15%, rgba(0, 210, 106, 0.22) 0%, transparent 60%),
+    linear-gradient(145deg, #13271c 0%, #09150f 100%) !important;
+  border: 1px solid rgba(0, 210, 106, 0.4) !important;
+  border-radius: var(--radius-xl);
+  padding: 24px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+  position: relative;
+  overflow: hidden;
+  color: #FFFFFF !important;
+}
+
+#step-13.step-white-theme .hero-insurance-card h1 {
+  color: #FFFFFF !important;
+}
+
+#step-13.step-white-theme .hero-insurance-card p {
+  color: #CBD5E1 !important;
+}
+
+#step-13.step-white-theme .hero-insurance-card .ins-step-row.done {
+  color: #F8FAFC !important;
+}
+
+#step-13.step-white-theme .hero-insurance-card .ins-step-row.current {
+  color: var(--primary) !important;
+}
+
+/* Cards de Vantagens (Perks) no fundo branco */
+#step-13.step-white-theme .ins-perk-card {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+#step-13.step-white-theme .ins-perk-title {
+  color: #0F172A !important;
+}
+
+#step-13.step-white-theme .ins-perk-desc {
+  color: #64748B !important;
+}
+
+#step-13.step-white-theme .ins-perk-icon-circle {
+  background: #F0FDF4 !important;
+  border: 1px solid #DCFCE7 !important;
+  color: #16A34A !important;
+}
+
+/* Cotações no fundo branco */
+#step-13.step-white-theme .quotation-card-option {
+  background: #FFFFFF !important;
+  border: 1.5px solid #E2E8F0 !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03);
+}
+
+#step-13.step-white-theme .quotation-card-option:hover {
+  border-color: #CBD5E1 !important;
+}
+
+#step-13.step-white-theme .quotation-card-option.selected {
+  border: 2px solid #00D26A !important;
+  background: #F0FDF4 !important;
+  box-shadow: 0 4px 16px rgba(0, 210, 106, 0.15) !important;
+}
+
+#step-13.step-white-theme .quote-left-info .quote-tag {
+  color: #64748B !important;
+}
+
+#step-13.step-white-theme .quote-left-info .quote-amount {
+  color: #0F172A !important;
+}
+
+#step-13.step-white-theme .quotation-card-option.selected .quote-left-info .quote-amount {
+  color: #15803D !important;
+}
+
+#step-13.step-white-theme .quote-left-info .quote-installments {
+  color: #64748B !important;
+}
+
+#step-13.step-white-theme .quote-right-price .price-tag {
+  color: #64748B !important;
+}
+
+#step-13.step-white-theme .quote-right-price .price-val {
+  color: #0F172A !important;
+}
+
+#step-13.step-white-theme .quotation-card-option.selected .quote-right-price .price-val {
+  color: #15803D !important;
+}
+
+/* Depoimentos no fundo branco */
+#step-13.step-white-theme .testimonials-box {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+#step-13.step-white-theme .testimonials-box h3 {
+  color: #0F172A !important;
+}
+
+#step-13.step-white-theme .testimonial-user p:first-child {
+  color: #0F172A !important;
+}
+
+#step-13.step-white-theme .testimonial-user p:last-child {
+  color: #64748B !important;
+}
+
+#step-13.step-white-theme .testimonial-text {
+  color: #475569 !important;
+}
+
+#step-13.step-white-theme .user-avatar-initials {
+  background: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+.insurance-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.ins-step-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.ins-step-row.done {
+  color: var(--text-main);
+}
+
+.ins-step-row.current {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.ins-step-icon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  flex-shrink: 0;
+}
+
+.ins-step-row.done .ins-step-icon {
+  background: var(--primary);
+  color: var(--text-dark);
+}
+
+.ins-step-row.current .ins-step-icon {
+  background: rgba(0, 210, 106, 0.2);
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+/* Lista de Vantagens do Seguro */
+.insurance-perks-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 18px 0;
+}
+
+.ins-perk-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 14px 16px;
+}
+
+.ins-perk-icon-circle {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(0, 210, 106, 0.12);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ins-perk-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+.ins-perk-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-top: 2px;
+}
+
+/* Opções de Cotações */
+.quotations-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.quotation-card-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 18px;
+  background: var(--bg-card);
+  border: 2px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.quotation-card-option:hover {
+  border-color: var(--border-medium);
+}
+
+.quotation-card-option.selected {
+  border-color: var(--primary);
+  background: rgba(0, 210, 106, 0.07);
+  box-shadow: 0 0 20px rgba(0, 210, 106, 0.15);
+}
+
+.quote-left-info .quote-tag {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.quote-left-info .quote-amount {
+  font-size: 1.35rem;
+  font-weight: 900;
+  color: var(--primary);
+  letter-spacing: -0.02em;
+}
+
+.quote-left-info .quote-installments {
+  font-size: 0.75rem;
+  color: var(--text-subtle);
+}
+
+.quote-right-price {
+  text-align: right;
+}
+
+.quote-right-price .price-tag {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.quote-right-price .price-val {
+  font-size: 1.2rem;
+  font-weight: 900;
+  color: #FFFFFF;
+}
+
+/* Depoimentos / Prova Social */
+.testimonials-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 18px;
+  margin: 18px 0;
+}
+
+.testimonial-item {
+  padding: 12px 0;
+}
+
+.testimonial-user {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.user-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar-initials {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #1e3a5f;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stars-row {
+  color: #FBBF24;
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.testimonial-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.45;
+}
+
+/* ==========================================================================
+   CHECKOUT PIX EM TEMPO REAL (PASSO 14)
+   ========================================================================== */
+
+.urgency-banner {
+  background: linear-gradient(90deg, #991b1b 0%, #dc2626 50%, #991b1b 100%);
+  color: #FFFFFF;
+  padding: 9px 16px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+  position: sticky;
+  top: 61px;
+  z-index: 25;
+}
+
+.urgency-banner .timer-digits {
+  font-variant-numeric: tabular-nums;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.pix-checkout-box {
+  background: var(--bg-card);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius-xl);
+  padding: 28px 24px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 0 40px rgba(0, 210, 106, 0.2);
+  margin-top: 14px;
+}
+
+.pix-badge-top {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: var(--text-dark);
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 4px 16px;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(0, 210, 106, 0.4);
+}
+
+.qr-code-holder {
+  width: 210px;
+  height: 210px;
+  margin: 18px auto;
+  background: #FFFFFF;
+  border-radius: var(--radius-lg);
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.qr-code-holder svg,
+.qr-code-holder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.qr-loading-overlay {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--text-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.pix-status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(0, 210, 106, 0.12);
+  border: 1px solid rgba(0, 210, 106, 0.3);
+  color: var(--primary);
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  margin-top: 10px;
+}
+
+.pix-env-alert {
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--accent-gold);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  font-size: 0.75rem;
+  margin: 12px 0;
+  display: none;
+  text-align: left;
+  line-height: 1.4;
+}
+
+.pix-copia-cola-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-input);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 8px 12px;
+  margin: 16px 0;
+}
+
+.pix-code-text {
+  flex: 1;
+  font-size: 0.76rem;
+  font-family: monospace;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+}
+
+.btn-copy-pix {
+  background: var(--primary);
+  color: var(--text-dark);
+  font-size: 0.8rem;
+  font-weight: 800;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-fast);
+  white-space: nowrap;
+}
+
+.btn-copy-pix:hover {
+  filter: brightness(1.1);
+}
+
+.copy-feedback-toast {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-top: -8px;
+  margin-bottom: 12px;
+  display: none;
+}
+
+/* Instruções Passo a Passo */
+.pix-steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  margin-top: 20px;
+}
+
+.pix-step-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.step-number-pill {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   TELA DE SUCESSO / COMPROVANTE OFICIAL DE LIBERAÇÃO (PASSO 15)
+   ========================================================================== */
+
+.success-screen-card {
+  text-align: center;
+  padding: 36px 24px;
+}
+
+.success-checkmark-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px;
+  box-shadow: 0 0 40px rgba(0, 210, 106, 0.5);
+  animation: scale-up 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes scale-up {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.comprovante-receipt-box {
+  background: #091322;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  text-align: left;
+  margin: 24px 0;
+  position: relative;
+}
+
+.receipt-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px dashed var(--border-medium);
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+}
+
+.receipt-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.82rem;
+  padding: 6px 0;
+}
+
+.receipt-row .label {
+  color: var(--text-muted);
+}
+
+.receipt-row .value {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   NOTIFICAÇÕES FLUTUANTES DE PROVA SOCIAL
+   ========================================================================== */
+
+.social-proof-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  opacity: 0;
+  z-index: 90;
+  background: rgba(14, 25, 44, 0.95);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(0, 210, 106, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 15px rgba(0, 210, 106, 0.2);
+  border-radius: var(--radius-full);
+  padding: 10px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 90vw;
+  pointer-events: none;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-proof-toast.visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
+.toast-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--primary-gradient);
+  color: var(--text-dark);
+  font-weight: 800;
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.toast-content {
+  font-size: 0.8rem;
+  line-height: 1.35;
+}
+
+.toast-content strong {
+  color: #FFFFFF;
+}
+
+.toast-content span.highlight {
+  color: var(--primary);
+  font-weight: 700;
+}
+
+/* ==========================================================================
+   RODAPÉ INSTITUCIONAL E SELOS DE CONFIANÇA
+   ========================================================================== */
+
+.app-footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border-subtle);
+  background: rgba(6, 11, 20, 0.95);
+  padding: 32px 20px 24px;
+  font-size: 0.76rem;
+  color: var(--text-subtle);
+  line-height: 1.6;
+}
+
+.footer-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.security-seals-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.seal-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-muted);
+}
+
+.seal-item svg {
+  color: var(--primary);
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 14px;
+  font-weight: 600;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   UTILITÁRIOS E ANIMAÇÕES
+   ========================================================================== */
+
+.step-view {
+  display: none;
+  animation: fadeInStep 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.step-view.active {
+  display: block;
+}
+
+@keyframes fadeInStep {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.text-gradient {
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.pulse-animation {
+  animation: pulse-glow 2.5s infinite ease-in-out;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 15px rgba(0, 210, 106, 0.3); }
+  50% { box-shadow: 0 0 35px rgba(0, 210, 106, 0.6); }
+}
+
+/* Responsividade Mobile */
+@media (max-width: 480px) {
+  .app-container {
+    padding: 0 12px 30px;
+  }
+  
+  .glass-card {
+    padding: 20px 16px;
+  }
+  
+  .step-title {
+    font-size: 1.55rem;
+  }
+  
+  .amount-huge {
+    font-size: 2.5rem;
+  }
+  
+  .options-grid-2col {
+    grid-template-columns: 1fr;
+  }
+  
+  .radio-chip-group {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ==========================================================================
+   DOCUSIGN INTEGRATION & CONTRATO ELETRÔNICO
+   ========================================================================== */
+
+.contract-email-alert {
+  background: rgba(0, 210, 106, 0.08);
+  border: 1px solid rgba(0, 210, 106, 0.28);
+  border-radius: var(--radius-lg);
+  padding: 18px;
+  margin: 18px 0;
+  text-align: left;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  box-shadow: 0 4px 20px rgba(0, 210, 106, 0.08);
+}
+
+.contract-email-icon {
+  background: var(--primary);
+  color: var(--text-dark);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 210, 106, 0.35);
+}
+
+.contract-email-content h4 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 4px;
+}
+
+.contract-email-content p {
+  font-size: 0.82rem;
+  color: var(--text-main);
+  line-height: 1.45;
+}
+
+.btn-docusign-action {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #09357B 0%, #1e5bd8 100%);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.98rem;
+  padding: 16px 22px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(59, 130, 246, 0.4);
+  box-shadow: 0 8px 25px rgba(30, 91, 216, 0.35);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  text-decoration: none;
+}
+
+.btn-docusign-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(30, 91, 216, 0.5);
+  filter: brightness(1.08);
+}
+
+/* Modal DocuSign */
+.docusign-modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(4, 8, 16, 0.88);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  z-index: 99999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.docusign-modal-backdrop.active {
+  display: flex;
+  opacity: 1;
+}
+
+.docusign-modal-dialog {
+  background: #0b1322;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-xl);
+  width: 100%;
+  max-width: 860px;
+  max-height: 94vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.8), 0 0 0 1px rgba(0, 210, 106, 0.2);
+  overflow: hidden;
+  animation: docusignSlideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes docusignSlideUp {
+  from {
+    transform: translateY(30px) scale(0.97);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.docusign-header-bar {
+  background: #070d19;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+}
+
+.docusign-logo-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.docusign-badge-pill {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+}
+
+.docusign-badge-pill.pending {
+  background: rgba(245, 158, 11, 0.18);
+  border: 1px solid rgba(245, 158, 11, 0.4);
+  color: #FBBF24;
+}
+
+.docusign-badge-pill.signed {
+  background: rgba(0, 210, 106, 0.18);
+  border: 1px solid rgba(0, 210, 106, 0.4);
+  color: var(--primary);
+}
+
+.btn-close-docusign {
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-muted);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition-fast);
+}
+
+.btn-close-docusign:hover {
+  background: rgba(255, 255, 255, 0.15);
+  color: #FFFFFF;
+}
+
+/* Área de Rolagem do Documento */
+.docusign-scroll-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px;
+  background: #09101c;
+}
+
+/* Folha A4 Timbrada do Contrato */
+.docusign-paper {
+  background: #FFFFFF;
+  color: #1F2937;
+  padding: 40px 36px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+  font-size: 0.82rem;
+  line-height: 1.6;
+  position: relative;
+  font-family: 'Inter', -apple-system, sans-serif;
+}
+
+.docusign-paper-header {
+  border-bottom: 2px solid #0F172A;
+  padding-bottom: 16px;
+  margin-bottom: 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.docusign-doc-title {
+  font-size: 1.15rem;
+  font-weight: 900;
+  color: #0F172A;
+  letter-spacing: -0.02em;
+}
+
+.docusign-doc-subtitle {
+  font-size: 0.72rem;
+  color: #64748B;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.docusign-section-title {
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: #0F172A;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid #E2E8F0;
+  padding-bottom: 4px;
+}
+
+.docusign-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 10px 0 16px;
+  font-size: 0.78rem;
+}
+
+.docusign-table td {
+  padding: 6px 10px;
+  border: 1px solid #E2E8F0;
+}
+
+.docusign-table td.label-col {
+  background: #F8FAFC;
+  font-weight: 700;
+  color: #475569;
+  width: 32%;
+}
+
+.docusign-table td.val-col {
+  color: #0F172A;
+  font-weight: 600;
+}
+
+/* Tag Amarela Clássica da DocuSign (Sign Here) */
+.docusign-tag-amber {
+  background: #FFCC00;
+  color: #000000;
+  font-weight: 900;
+  font-size: 0.72rem;
+  padding: 5px 12px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  position: relative;
+  cursor: pointer;
+  animation: amberPulse 2s infinite ease-in-out;
+}
+
+.docusign-tag-amber::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  border-left: 6px solid #FFCC00;
+}
+
+@keyframes amberPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+/* Área de Assinatura */
+.docusign-sign-box {
+  margin-top: 26px;
+  padding: 16px;
+  border: 2px dashed #CBD5E1;
+  border-radius: var(--radius-md);
+  background: #F8FAFC;
+  text-align: center;
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
+
+.docusign-sign-box:hover {
+  border-color: #3B82F6;
+  background: #EFF6FF;
+}
+
+.docusign-sign-box.signed {
+  border: 2px solid #10B981;
+  background: #ECFDF5;
+  cursor: default;
+}
+
+.docusign-signature-font {
+  font-family: 'Caveat', cursive;
+  font-size: 2.6rem;
+  color: #0F172A;
+  line-height: 1;
+  margin: 6px 0;
+}
+
+/* Canvas para Desenho de Assinatura */
+.signature-canvas-wrap {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid #CBD5E1;
+  border-radius: var(--radius-sm);
+  margin: 10px auto;
+  max-width: 480px;
+  height: 110px;
+}
+
+.signature-canvas-wrap canvas {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.canvas-actions-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+/* Selo de Assinatura Autenticada ICP-Brasil */
+.docusign-signed-stamp {
+  border: 2px solid #059669;
+  background: rgba(16, 185, 129, 0.06);
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-top: 14px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.docusign-stamp-badge {
+  background: #059669;
+  color: #FFFFFF;
+  font-size: 0.68rem;
+  font-weight: 800;
+  padding: 3px 8px;
+  border-radius: 4px;
+}
+
+/* Rodapé do Modal */
+.docusign-footer-bar {
+  background: #070d19;
+  border-top: 1px solid var(--border-subtle);
+  padding: 14px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   ELEMENTOS DE ALTA CONVERSÃO - CRIATIVO CRED+ (BASEADO NA IMAGEM OFICIAL)
+   ========================================================================== */
+
+/* Badge Gancho: NÓS ACREDITAMOS EM VOCÊ! */
+.hero-hook-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: linear-gradient(135deg, #FF6600 0%, #FA4C00 100%);
+  color: #FFFFFF;
+  font-size: 0.82rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 15px rgba(255, 90, 0, 0.45);
+  margin-bottom: 10px;
+  border: 1.5px solid rgba(255, 255, 255, 0.85);
+  animation: hook-pulse 2.8s infinite;
+}
+
+@keyframes hook-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 4px 15px rgba(255, 90, 0, 0.45); }
+  50% { transform: scale(1.04); box-shadow: 0 6px 20px rgba(255, 90, 0, 0.65); }
+}
+
+/* Título de Alto Impacto */
+.hero-main-title {
+  font-size: 1.85rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.hero-main-title .highlight-orange {
+  color: var(--primary);
+  text-shadow: 0 0 16px rgba(255, 90, 0, 0.5);
+}
+
+/* Card Visual com o Criativo Oficial Cred+ */
+.hero-visual-card {
+  position: relative;
+  border-radius: 22px;
+  overflow: hidden;
+  margin-bottom: 22px;
+  background: linear-gradient(180deg, rgba(14, 38, 74, 0.8) 0%, rgba(7, 22, 44, 0.95) 100%);
+  border: 2px solid rgba(255, 90, 0, 0.35);
+  box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.6), 0 0 25px rgba(255, 90, 0, 0.2);
+}
+
+.hero-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  max-height: 380px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-main-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.hero-visual-card:hover .hero-main-img {
+  transform: scale(1.02);
+}
+
+/* Carimbo DÍVIDAS PAGAS (Idêntico à Imagem de Referência) */
+.stamp-dividas-pagas {
+  position: absolute;
+  left: 20px;
+  bottom: 22px;
+  background: #FFFFFF;
+  color: #07162C;
+  font-size: 1.05rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: 3px solid #07162C;
+  transform: rotate(-8deg);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(255, 255, 255, 0.8);
+  z-index: 8;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  animation: stamp-wiggle 4s ease-in-out infinite;
+}
+
+@keyframes stamp-wiggle {
+  0%, 100% { transform: rotate(-8deg) scale(1); }
+  50% { transform: rotate(-6deg) scale(1.03); }
+}
+
+/* Badge Flutuante de Crédito Aprovado com Valor Dinâmico */
+.badge-credito-aprovado {
+  position: absolute;
+  right: 18px;
+  top: 18px;
+  background: rgba(7, 22, 44, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 2px solid #00D26A;
+  border-radius: 14px;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 8px 24px rgba(0, 210, 106, 0.4), inset 0 1px 2px rgba(255, 255, 255, 0.2);
+  z-index: 8;
+  animation: badge-float 3.5s ease-in-out infinite;
+}
+
+@keyframes badge-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.badge-check-icon {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: #00D26A;
+  color: #07162C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 1rem;
+  box-shadow: 0 0 12px rgba(0, 210, 106, 0.6);
+}
+
+.badge-text-box {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  text-align: left;
+}
+
+.badge-aprovado-tag {
+  font-size: 0.62rem;
+  font-weight: 900;
+  color: #00D26A;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.badge-aprovado-val {
+  font-size: 1.1rem;
+  font-weight: 900;
+  color: #FFFFFF;
+  letter-spacing: -0.02em;
+}
+
+/* Moedas Flutuantes Decorativas */
+.floating-coin-elem {
+  position: absolute;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #FDE68A 0%, #F59E0B 60%, #B45309 100%);
+  border: 2px solid #FEF3C7;
+  color: #78350F;
+  font-size: 0.85rem;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(245, 158, 11, 0.45);
+  z-index: 7;
+  pointer-events: none;
+}
+
+.coin-pos-1 {
+  top: 35%;
+  right: 12px;
+  animation: float-coin-1 4s ease-in-out infinite;
+}
+
+.coin-pos-2 {
+  bottom: 30%;
+  left: 14px;
+  width: 32px;
+  height: 32px;
+  font-size: 0.75rem;
+  animation: float-coin-2 4.5s ease-in-out infinite 0.5s;
+}
+
+@keyframes float-coin-1 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(12deg); }
+}
+
+@keyframes float-coin-2 {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(8px) rotate(-14deg); }
+}
+
+/* ==========================================================================
+   OS 3 PILARES DE CONVERSÃO (RODAPÉ DO CRIATIVO OFICIAL)
+   "Dinheiro Rápido e Sem Burocracia! | 100% Online e Seguro | Parcele em até 48x!"
+   ========================================================================== */
+
+.hero-conversion-pillars {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(14, 38, 74, 0.7);
+  border: 1.5px solid rgba(255, 90, 0, 0.3);
+  border-radius: 18px;
+  padding: 16px 14px;
+  margin-top: 22px;
+  gap: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.pillar-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.25;
+}
+
+.pillar-icon-box {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 90, 0, 0.15);
+  border: 1.5px solid var(--primary);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+  box-shadow: 0 0 12px rgba(255, 90, 0, 0.3);
+}
+
+.pillar-title {
+  font-size: 0.78rem;
+  font-weight: 900;
+  color: #FFFFFF;
+}
+
+.pillar-subtitle {
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.pillar-v-divider {
+  width: 1px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.12);
+  flex-shrink: 0;
+}
+
+/* Barra de Atividade ao Vivo */
+.live-activity-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  margin: 16px 0 10px;
+  background: rgba(255, 90, 0, 0.08);
+  border: 1px solid rgba(255, 90, 0, 0.25);
+  border-radius: var(--radius-md);
+  font-size: 0.76rem;
+  color: var(--text-main);
+  text-align: center;
+}
+
+.live-pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #00D26A;
+  box-shadow: 0 0 8px #00D26A;
+  flex-shrink: 0;
+  animation: pulse-dot 1.5s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.4; transform: scale(1.3); }
+}
+
+@media (max-width: 520px) {
+  .hero-main-title {
+    font-size: 1.55rem;
+  }
+  .hero-conversion-pillars {
+    flex-direction: column;
+    gap: 14px;
+    padding: 18px 14px;
+  }
+  .pillar-v-divider {
+    width: 80%;
+    height: 1px;
+  }
+  .stamp-dividas-pagas {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    left: 14px;
+    bottom: 14px;
+  }
+  .badge-credito-aprovado {
+    right: 12px;
+    top: 12px;
+    padding: 6px 10px;
+  }
+}
